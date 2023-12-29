@@ -41,7 +41,7 @@ module control (
   reg [7:0]gap1;  //gap1为管道1的间隙，供小鸟通过
   reg [7:0]gap2;  //gap2为管道2的间隙，供小鸟通过
   reg [7:0]gap3;  //gap3为管道3的间隙，供小鸟通过
-  reg [3:0] bird_falling;  //bird_falling为小鸟距离开始下落的时间，为0时小鸟下落
+  reg [15:0] bird_flying;  //bird_flying为小鸟距离开始下落的时间，为0时小鸟下落
   wire clk_100ms;
   reg bird_falltime;
 
@@ -89,9 +89,9 @@ module control (
       longpress <= 0;
       fail <= 0;
       score <= 16'd0;
-      bird_falling <= 4'b0000;  //小鸟距离开始下落的时间，为0时小鸟下落
+      bird_flying <= 16'b0000;  //小鸟距离开始下落的时间，为0时小鸟下落
       coin[31] <= 1'b1;
-      coin[9:0] <= 10'd660+clk_div % 20;
+      coin[9:0] <= 10'd650+pipe_width+clk_div % 20;
       coin[19:10] <= 20+(clk_div+50)%(440-coin_length);
       pipe1_y <= pipe_head + clk_div % (330-pipe_head-pipe_head);  // 生成pipe_head到480-150-pipe_head的随机数
       pipe2_y <= pipe_head + (clk_div+10) % (330-pipe_head-pipe_head);  // 生成pipe_head到480-150-pipe_head的随机数
@@ -107,33 +107,33 @@ module control (
       if(status==2)status <= 2'b11;
       if  (pipeup1&&!fail&&status==3)begin
         case(cnt)
-          1:pipe1_y<=pipe1_y+1;
-          2:pipe2_y<=pipe2_y+1;
-          3:pipe3_y<=pipe3_y+1;
-        endcase
-      end
-      if (pipedown1&&!fail&&status==3)begin
-        case(cnt)
           1:pipe1_y<=pipe1_y-1;
           2:pipe2_y<=pipe2_y-1;
           3:pipe3_y<=pipe3_y-1;
         endcase
       end
+      if (pipedown1&&!fail&&status==3)begin
+        case(cnt)
+          1:pipe1_y<=pipe1_y+1;
+          2:pipe2_y<=pipe2_y+1;
+          3:pipe3_y<=pipe3_y+1;
+        endcase
+      end
       if (up1 && !fail && !longpress) begin  //按钮按下时up为1，小鸟飞行4个周期
-        bird_falling <= 4'd15;
+        bird_flying <= 16'd5000;
         bird_y[15]   <= 1'b1;
         longpress <= 1;
         bird_falltime <= 0;
       end
       else begin 
-        if ((bird_falling<=0)||fail) begin  //小鸟下落
-          bird_y <= bird_y - bird_falltime;
+        if ((bird_flying<=0)||fail) begin  //小鸟下落
+          bird_y <= bird_y + bird_falltime;
           bird_y[15] <= 1'b0;
           bird_falltime <= bird_falltime+1;
         end
         else begin  //小鸟按惯性向上飞
-          bird_y <= bird_y + bird_falling;
-          bird_falling <= bird_falling - 1;
+          bird_y <= bird_y - bird_flying/100;
+          bird_flying <= bird_flying - 1;
         end
       end
       if (!up1) begin
@@ -151,7 +151,7 @@ module control (
         gap1 <= 100 + clk_div % 50;
         pass1 <= 0;
         coin[31] <= 1'b1;
-        coin[9:0] <= 10'd660+clk_div % 20;
+        coin[9:0] <= 10'd650+pipe_width+clk_div % 20;
         coin[19:10] <= 20+(clk_div+50)%(440-coin_length);
         cnt <= 1;
       end
