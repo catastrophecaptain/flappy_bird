@@ -10,6 +10,7 @@ module control (
     output reg [31:0]pipe2,//pipe2储存管道2的x和y和gap，x占高10位，y占低10位，x为管子左边界坐标，y为管子上侧坐标
     output reg [31:0]pipe3//pipe3储存管道3的x和y和gap，x占高10位，y占低10位，x为管子左边界坐标，y为管子上侧坐标
 	 //output reg [3:0]bird_falling
+   //123
 );
   wire [31:0] clk_div;
   wire up1;
