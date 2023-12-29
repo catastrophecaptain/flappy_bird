@@ -32,7 +32,6 @@ wire [1:0]status;
     );
     display display (
         .clk(clk),
-        .clr(clr),
         .score(score),
         .status(status),
         .mario(mario),
