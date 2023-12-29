@@ -107,16 +107,16 @@ module control (
       if(status==2)status <= 2'b11;
       if  (pipeup1&&!fail&&status==3)begin
         case(cnt)
-          1:pipe1_y<=pipe1_y-1;
-          2:pipe2_y<=pipe2_y-1;
-          3:pipe3_y<=pipe3_y-1;
+          1:pipe1_y<=pipe1_y+1;
+          2:pipe2_y<=pipe2_y+1;
+          3:pipe3_y<=pipe3_y+1;
         endcase
       end
       if (pipedown1&&!fail&&status==3)begin
         case(cnt)
-          1:pipe1_y<=pipe1_y+1;
-          2:pipe2_y<=pipe2_y+1;
-          3:pipe3_y<=pipe3_y+1;
+          1:pipe1_y<=pipe1_y-1;
+          2:pipe2_y<=pipe2_y-1;
+          3:pipe3_y<=pipe3_y-1;
         endcase
       end
       if (up1 && !fail && !longpress) begin  //按钮按下时up为1，小鸟飞行4个周期
@@ -127,12 +127,12 @@ module control (
       end
       else begin 
         if ((bird_flying<=0)||fail) begin  //小鸟下落
-          bird_y <= bird_y + bird_falltime;
+          bird_y <= bird_y - bird_falltime/10;
           bird_y[15] <= 1'b0;
-          bird_falltime <= bird_falltime+1;
+          bird_falltime <= bird_falltime + 1;
         end
         else begin  //小鸟按惯性向上飞
-          bird_y <= bird_y - bird_flying/100;
+          bird_y <= bird_y + bird_flying / 10;
           bird_flying <= bird_flying - 1;
         end
       end
