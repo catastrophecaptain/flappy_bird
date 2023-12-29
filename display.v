@@ -116,7 +116,7 @@ module display (
                 ((-y + pipe_height+pipe_gap+pipes_head_height-2 >= 10'd0) && (-y + pipe_height+pipe_gap-2+pipes_head_height <pipes_head_height)))&&(|(color_pipe_head^ignore)) ? 1'b1 : 1'b0;
   assign isbody = (y < pipe_height - pipes_head_height) || (pipe_height + pipe_gap+pipes_head_height-2 < y)&&(|(color_pipe_body^ignore)) ? 1'b1 : 1'b0;
   assign ismario = ((character_address <= x) && (x < character_address+character_width) && (y >= mario[9:0]) && (y < mario[9:0] + character_height) && (|(color_mario^ignore))) ? 1'b1 : 1'b0;
-  assign iscoin = coin[15]&&((|(color_coin^ignore))&&(x-coin[9:0]<coin_width)&&(y-coin[19:10]<coin_height));
+  assign iscoin = coin[31]&&((|(color_coin^ignore))&&(x-coin[9:0]<coin_width)&&(y-coin[19:10]<coin_height));
   assign rgb_temp = rdn?12'h000:ismario ? color_mario :iscoin?color_coin: ispipe&&ishead ? color_pipe_head : ispipe&&isbody ? color_pipe_body : color_back;
   //assign rgb_temp=rdn?12'h000:color_back;
 endmodule
