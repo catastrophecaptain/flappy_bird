@@ -19,6 +19,7 @@ module control (
   wire up1;
   wire pipeup1;
   wire pipedown1;
+  reg cnt;
   reg fail;//fail为1游戏结束
   reg pass1;
   reg pass2;
@@ -80,6 +81,7 @@ module control (
       pipe1_x <= 20'd210;
       pipe2_x <= 20'd420;
       pipe3_x <= 20'd630;
+      cnt <= 3;
       pass1 <= 0;
       pass2 <= 0;
       pass3 <= 0;//pass1,pass2,pass3为小鸟是否通过管道，为1时通过
@@ -101,10 +103,22 @@ module control (
       pipe2 <= {gap2,pipe2_x, pipe2_y};
       pipe3 <= {gap3,pipe3_x, pipe3_y};
     end else begin
-      status <= 2'b00;
-      // if  (pipeup1&&!fail)begin
-      //   pipe3_y <= bird_y - 10;
-      // end
+      if(status==1)status <= 2'b00;
+      if(status==2)status <= 2'b11;
+      if  (pipeup1&&!fail&&status==3)begin
+        case(cnt)
+          1:pipe1_y<=pipe1_y+1;
+          2:pipe2_y<=pipe2_y+1;
+          3:pipe3_y<=pipe3_y+1;
+        endcase
+      end
+      if (pipedown1&&!fail&&status==3)begin
+        case(cnt)
+          1:pipe1_y<=pipe1_y-1;
+          2:pipe2_y<=pipe2_y-1;
+          3:pipe3_y<=pipe3_y-1;
+        endcase
+      end
       if (up1 && !fail && !longpress) begin  //按钮按下时up为1，小鸟飞行4个周期
         bird_falling <= 4'd15;
         bird_y[15]   <= 1'b1;
@@ -139,18 +153,21 @@ module control (
         coin[31] <= 1'b1;
         coin[9:0] <= 10'd660+clk_div % 20;
         coin[19:10] <= 20+(clk_div+50)%(440-coin_length);
+        cnt <= 1;
       end
       if (pipe2_x <= 0) begin  //管道移出屏幕后重新生成 
         pipe2_x <= 20'd640;
         pipe2_y <= pipe_head + clk_div % (330-pipe_head-pipe_head);  // 生成pipe_head到480-150-pipe_head的随机数
         gap2 <= 100 + clk_div % 50;
         pass2 <= 0;
+        cnt <= 2;
       end
       if (pipe3_x <= 0) begin  //管道移出屏幕后重新生成
         pipe3_x <= 20'd640;
         pipe3_y <= pipe_head + clk_div % (330-pipe_head-pipe_head);  // 生成pipe_head到480-150-pipe_head的随机数
         gap3 <= 100 + clk_div % 50;
         pass3 <= 0;
+        cnt <= 3;
       end
       if ((((bird_y <= pipe1_y)||(bird_y+bird_height>=pipe1_y+gap1))&&(bird_x<=pipe1_x+pipe_width)&&(bird_x+bird_width>=pipe1_x))
                 ||(((bird_y <= pipe2_y)||(bird_y+bird_height>=pipe2_y+gap2))&&(bird_x<=pipe2_x+pipe_width)&&(bird_x+bird_width>=pipe2_x))
