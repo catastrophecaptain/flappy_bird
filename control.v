@@ -3,8 +3,10 @@ module control (
     input wire clk,  //时钟
     input wire rst,  //rst为1时游戏重新开始
     input up,  //up为1时小鸟飞起，连接btn
-    //input mode,  //mode为1时双人模式，为0时单人模式
-    //output reg [1:0]status,  
+    input mode,  //mode为1时双人模式，为0时单人模式
+    input pipe_up,
+    input pipe_down,
+    output reg [1:0]status,  
     output reg [15:0] score,  //分数
     output reg [15:0]bird_y, //bird_y为小鸟下侧y坐标，第16位记录小鸟是否在下落，为0时小鸟下落，为1时小鸟上升
     output reg [31:0]pipe1,//pipe1储存管道1的x和y和gap，x占高10位，y占低10位，x为管子左边界坐标，y为管子上侧坐标
@@ -15,6 +17,8 @@ module control (
 );
   wire [31:0] clk_div;
   wire up1;
+  wire pipeup1;
+  wire pipedown1;
   reg fail;//fail为1游戏结束
   reg pass1;
   reg pass2;
@@ -38,6 +42,7 @@ module control (
   reg [7:0]gap3;  //gap3为管道3的间隙，供小鸟通过
   reg [3:0] bird_falling;  //bird_falling为小鸟距离开始下落的时间，为0时小鸟下落
   wire clk_100ms;
+  reg bird_falltime;
 
   clk_div m0 (
       .clk(clk),
@@ -49,12 +54,28 @@ module control (
       .btn(up),
       .pbreg(up1)
   );  //按钮去抖动，将按钮信号去抖动
+  pbdebounce m3 (
+      .clk_1ms(clk_div[17]),
+      .btn(pipe_up),
+      .pbreg(pipeup1)
+  );  //按钮去抖动，将按钮信号去抖动
+  pbdebounce m4 (
+      .clk_1ms(clk_div[17]),
+      .btn(pipe_down),
+      .pbreg(pipedown1)
+  );  //按钮去抖动，将按钮信号去抖动
   clk_100ms m2 (
       .clk(clk),
       .clk_100ms(clk_100ms)
   );  //100ms时钟
   always @(posedge clk_100ms or negedge rst) begin
     if (!rst) begin
+      if(mode) begin
+        status <= 2'b10;
+      end
+      else begin
+        status <= 2'b01;
+      end
       bird_y <= 16'd240;  //小鸟初始位置
       pipe1_x <= 20'd210;
       pipe2_x <= 20'd420;
@@ -62,6 +83,7 @@ module control (
       pass1 <= 0;
       pass2 <= 0;
       pass3 <= 0;//pass1,pass2,pass3为小鸟是否通过管道，为1时通过
+      bird_falltime <= 0;
       longpress <= 0;
       fail <= 0;
       score <= 16'd0;
@@ -79,18 +101,26 @@ module control (
       pipe2 <= {gap2,pipe2_x, pipe2_y};
       pipe3 <= {gap3,pipe3_x, pipe3_y};
     end else begin
+      status <= 2'b00;
+      // if  (pipeup1&&!fail)begin
+      //   pipe3_y <= bird_y - 10;
+      // end
       if (up1 && !fail && !longpress) begin  //按钮按下时up为1，小鸟飞行4个周期
-        bird_falling <= 4'd4;
+        bird_falling <= 4'd15;
         bird_y[15]   <= 1'b1;
         longpress <= 1;
+        bird_falltime <= 0;
       end
-      else if ((~(|bird_falling))||fail) begin  //小鸟下落
-        bird_y <= bird_y - 3;
-        bird_y[15] <= 1'b0;
-      end
-		  else begin  //小鸟按惯性向上飞
-        bird_y <= bird_y + bird_falling;
-        bird_falling <= bird_falling - 1;
+      else begin 
+        if ((bird_falling<=0)||fail) begin  //小鸟下落
+          bird_y <= bird_y - bird_falltime;
+          bird_y[15] <= 1'b0;
+          bird_falltime <= bird_falltime+1;
+        end
+        else begin  //小鸟按惯性向上飞
+          bird_y <= bird_y + bird_falling;
+          bird_falling <= bird_falling - 1;
+        end
       end
       if (!up1) begin
         longpress <= 0;
@@ -129,15 +159,15 @@ module control (
         fail <= 1;
       end
       else if (!fail) begin
-        if((~pass1)&&(bird_x>=pipe1_x+pipe_width)) begin
+        if((!pass1)&&(bird_x>=pipe1_x+pipe_width)) begin
           score <= score + 1;
           pass1 <= 1;
         end
-        if((~pass2)&&(bird_x>=pipe2_x+pipe_width)) begin
+        if((!pass2)&&(bird_x>=pipe2_x+pipe_width)) begin
           score <= score + 1;
           pass2 <= 1;
         end
-        if((~pass3)&&(bird_x>=pipe3_x+pipe_width)) begin
+        if((!pass3)&&(bird_x>=pipe3_x+pipe_width)) begin
           score <= score + 1;
           pass3 <= 1;
         end
