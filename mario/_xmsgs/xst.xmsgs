@@ -5,321 +5,369 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="warning" file="HDLCompiler" num="1016" delta="old" >"D:\mario\top.v" Line 20: Port <arg fmt="%s" index="1">coin</arg> is not connected to this instance
+<msg type="warning" file="HDLCompiler" num="1016" delta="old" >"D:\mario\top.v" Line 21: Port <arg fmt="%s" index="1">mode</arg> is not connected to this instance
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="1016" delta="old" >"D:\mario\top.v" Line 31: Port <arg fmt="%s" index="1">coin</arg> is not connected to this instance
+<msg type="warning" file="HDLCompiler" num="1016" delta="old" >"D:\mario\top.v" Line 33: Port <arg fmt="%s" index="1">coin</arg> is not connected to this instance
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="413" delta="old" >"D:\mario\control.v" Line 70: Result of <arg fmt="%d" index="1">11</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">10</arg>-bit target.
+<msg type="warning" file="HDLCompiler" num="413" delta="old" >"D:\mario\control.v" Line 84: Result of <arg fmt="%d" index="1">2</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">1</arg>-bit target.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="413" delta="old" >"D:\mario\control.v" Line 71: Result of <arg fmt="%d" index="1">32</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">10</arg>-bit target.
+<msg type="warning" file="HDLCompiler" num="413" delta="old" >"D:\mario\control.v" Line 94: Result of <arg fmt="%d" index="1">12</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">10</arg>-bit target.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="413" delta="old" >"D:\mario\control.v" Line 72: Result of <arg fmt="%d" index="1">32</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">10</arg>-bit target.
+<msg type="warning" file="HDLCompiler" num="413" delta="old" >"D:\mario\control.v" Line 95: Result of <arg fmt="%d" index="1">32</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">10</arg>-bit target.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="413" delta="old" >"D:\mario\control.v" Line 73: Result of <arg fmt="%d" index="1">32</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">10</arg>-bit target.
+<msg type="warning" file="HDLCompiler" num="413" delta="old" >"D:\mario\control.v" Line 96: Result of <arg fmt="%d" index="1">32</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">10</arg>-bit target.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="413" delta="old" >"D:\mario\control.v" Line 74: Result of <arg fmt="%d" index="1">32</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">10</arg>-bit target.
+<msg type="warning" file="HDLCompiler" num="413" delta="old" >"D:\mario\control.v" Line 97: Result of <arg fmt="%d" index="1">32</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">10</arg>-bit target.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="413" delta="old" >"D:\mario\control.v" Line 88: Result of <arg fmt="%d" index="1">32</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">16</arg>-bit target.
+<msg type="warning" file="HDLCompiler" num="413" delta="old" >"D:\mario\control.v" Line 98: Result of <arg fmt="%d" index="1">32</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">10</arg>-bit target.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="413" delta="old" >"D:\mario\control.v" Line 93: Result of <arg fmt="%d" index="1">32</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">4</arg>-bit target.
+<msg type="warning" file="HDLCompiler" num="413" delta="old" >"D:\mario\control.v" Line 110: Result of <arg fmt="%d" index="1">32</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">10</arg>-bit target.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="413" delta="old" >"D:\mario\control.v" Line 99: Result of <arg fmt="%d" index="1">32</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">10</arg>-bit target.
+<msg type="warning" file="HDLCompiler" num="295" delta="old" >"D:\mario\control.v" Line 111: case condition never applies
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="413" delta="old" >"D:\mario\control.v" Line 100: Result of <arg fmt="%d" index="1">32</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">10</arg>-bit target.
+<msg type="warning" file="HDLCompiler" num="295" delta="old" >"D:\mario\control.v" Line 112: case condition never applies
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="413" delta="old" >"D:\mario\control.v" Line 101: Result of <arg fmt="%d" index="1">32</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">10</arg>-bit target.
+<msg type="warning" file="HDLCompiler" num="413" delta="old" >"D:\mario\control.v" Line 117: Result of <arg fmt="%d" index="1">11</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">10</arg>-bit target.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="413" delta="old" >"D:\mario\control.v" Line 102: Result of <arg fmt="%d" index="1">32</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">10</arg>-bit target.
+<msg type="warning" file="HDLCompiler" num="295" delta="old" >"D:\mario\control.v" Line 118: case condition never applies
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="413" delta="old" >"D:\mario\control.v" Line 106: Result of <arg fmt="%d" index="1">32</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">10</arg>-bit target.
+<msg type="warning" file="HDLCompiler" num="295" delta="old" >"D:\mario\control.v" Line 119: case condition never applies
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="413" delta="old" >"D:\mario\control.v" Line 110: Result of <arg fmt="%d" index="1">11</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">10</arg>-bit target.
+<msg type="warning" file="HDLCompiler" num="413" delta="old" >"D:\mario\control.v" Line 132: Result of <arg fmt="%d" index="1">2</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">1</arg>-bit target.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="413" delta="old" >"D:\mario\control.v" Line 111: Result of <arg fmt="%d" index="1">32</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">10</arg>-bit target.
+<msg type="warning" file="HDLCompiler" num="413" delta="old" >"D:\mario\control.v" Line 135: Result of <arg fmt="%d" index="1">32</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">16</arg>-bit target.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="413" delta="old" >"D:\mario\control.v" Line 115: Result of <arg fmt="%d" index="1">32</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">10</arg>-bit target.
+<msg type="warning" file="HDLCompiler" num="413" delta="old" >"D:\mario\control.v" Line 136: Result of <arg fmt="%d" index="1">32</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">16</arg>-bit target.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="413" delta="old" >"D:\mario\control.v" Line 121: Result of <arg fmt="%d" index="1">32</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">10</arg>-bit target.
+<msg type="warning" file="HDLCompiler" num="413" delta="old" >"D:\mario\control.v" Line 143: Result of <arg fmt="%d" index="1">32</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">10</arg>-bit target.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="413" delta="old" >"D:\mario\control.v" Line 133: Result of <arg fmt="%d" index="1">17</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">16</arg>-bit target.
+<msg type="warning" file="HDLCompiler" num="413" delta="old" >"D:\mario\control.v" Line 144: Result of <arg fmt="%d" index="1">32</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">10</arg>-bit target.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="413" delta="old" >"D:\mario\control.v" Line 137: Result of <arg fmt="%d" index="1">17</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">16</arg>-bit target.
+<msg type="warning" file="HDLCompiler" num="413" delta="old" >"D:\mario\control.v" Line 145: Result of <arg fmt="%d" index="1">32</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">10</arg>-bit target.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="413" delta="old" >"D:\mario\control.v" Line 141: Result of <arg fmt="%d" index="1">17</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">16</arg>-bit target.
+<msg type="warning" file="HDLCompiler" num="413" delta="old" >"D:\mario\control.v" Line 146: Result of <arg fmt="%d" index="1">32</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">10</arg>-bit target.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="413" delta="old" >"D:\mario\control.v" Line 148: Result of <arg fmt="%d" index="1">17</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">16</arg>-bit target.
+<msg type="warning" file="HDLCompiler" num="413" delta="old" >"D:\mario\control.v" Line 150: Result of <arg fmt="%d" index="1">32</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">10</arg>-bit target.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="872" delta="new" >"D:\mario\display.v" Line 27: Using initial value of <arg fmt="%s" index="1">clr</arg> since it is never assigned
+<msg type="warning" file="HDLCompiler" num="413" delta="old" >"D:\mario\control.v" Line 154: Result of <arg fmt="%d" index="1">12</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">10</arg>-bit target.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="872" delta="new" >"D:\mario\display.v" Line 32: Using initial value of <arg fmt="%s" index="1">back_width</arg> since it is never assigned
+<msg type="warning" file="HDLCompiler" num="413" delta="old" >"D:\mario\control.v" Line 155: Result of <arg fmt="%d" index="1">32</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">10</arg>-bit target.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="872" delta="new" >"D:\mario\display.v" Line 33: Using initial value of <arg fmt="%s" index="1">character_width</arg> since it is never assigned
+<msg type="warning" file="HDLCompiler" num="413" delta="old" >"D:\mario\control.v" Line 160: Result of <arg fmt="%d" index="1">32</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">10</arg>-bit target.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="872" delta="new" >"D:\mario\display.v" Line 34: Using initial value of <arg fmt="%s" index="1">pipes_width</arg> since it is never assigned
+<msg type="warning" file="HDLCompiler" num="413" delta="old" >"D:\mario\control.v" Line 163: Result of <arg fmt="%d" index="1">2</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">1</arg>-bit target.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="872" delta="new" >"D:\mario\display.v" Line 35: Using initial value of <arg fmt="%s" index="1">coin_width</arg> since it is never assigned
+<msg type="warning" file="HDLCompiler" num="413" delta="old" >"D:\mario\control.v" Line 167: Result of <arg fmt="%d" index="1">32</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">10</arg>-bit target.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="872" delta="new" >"D:\mario\display.v" Line 36: Using initial value of <arg fmt="%s" index="1">ignore</arg> since it is never assigned
+<msg type="warning" file="HDLCompiler" num="413" delta="old" >"D:\mario\control.v" Line 170: Result of <arg fmt="%d" index="1">2</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">1</arg>-bit target.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="1499" delta="new" >"D:\mario\mario\ipcore_dir\back_rom.v" Line 39: Empty module &lt;<arg fmt="%s" index="1">back_rom</arg>&gt; remains a black box.
+<msg type="warning" file="HDLCompiler" num="413" delta="old" >"D:\mario\control.v" Line 180: Result of <arg fmt="%d" index="1">17</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">16</arg>-bit target.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="189" delta="new" >"D:\mario\display.v" Line 56: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">a</arg>&gt;. Formal port size is <arg fmt="%d" index="2">13</arg>-bit while actual signal size is <arg fmt="%d" index="1">32</arg>-bit.
+<msg type="warning" file="HDLCompiler" num="413" delta="old" >"D:\mario\control.v" Line 184: Result of <arg fmt="%d" index="1">17</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">16</arg>-bit target.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="1499" delta="new" >"D:\mario\mario\ipcore_dir\mario_rom.v" Line 39: Empty module &lt;<arg fmt="%s" index="1">mario_rom</arg>&gt; remains a black box.
+<msg type="warning" file="HDLCompiler" num="413" delta="old" >"D:\mario\control.v" Line 188: Result of <arg fmt="%d" index="1">17</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">16</arg>-bit target.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="189" delta="new" >"D:\mario\display.v" Line 64: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">a</arg>&gt;. Formal port size is <arg fmt="%d" index="2">8</arg>-bit while actual signal size is <arg fmt="%d" index="1">32</arg>-bit.
+<msg type="warning" file="HDLCompiler" num="413" delta="old" >"D:\mario\control.v" Line 195: Result of <arg fmt="%d" index="1">17</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">16</arg>-bit target.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="1499" delta="new" >"D:\mario\mario\ipcore_dir\mario_up_rom.v" Line 39: Empty module &lt;<arg fmt="%s" index="1">mario_up_rom</arg>&gt; remains a black box.
+<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"D:\mario\top.v" Line 25: Assignment to <arg fmt="%s" index="1">coin</arg> ignored, since the identifier is never used
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="189" delta="new" >"D:\mario\display.v" Line 68: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">a</arg>&gt;. Formal port size is <arg fmt="%d" index="2">8</arg>-bit while actual signal size is <arg fmt="%d" index="1">32</arg>-bit.
+<msg type="warning" file="HDLCompiler" num="872" delta="old" >"D:\mario\display.v" Line 29: Using initial value of <arg fmt="%s" index="1">clr</arg> since it is never assigned
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="1499" delta="new" >"D:\mario\mario\ipcore_dir\pipe_head_rom.v" Line 39: Empty module &lt;<arg fmt="%s" index="1">pipe_head_rom</arg>&gt; remains a black box.
+<msg type="warning" file="HDLCompiler" num="872" delta="old" >"D:\mario\display.v" Line 35: Using initial value of <arg fmt="%s" index="1">back_width</arg> since it is never assigned
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="189" delta="new" >"D:\mario\display.v" Line 76: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">a</arg>&gt;. Formal port size is <arg fmt="%d" index="2">11</arg>-bit while actual signal size is <arg fmt="%d" index="1">32</arg>-bit.
+<msg type="warning" file="HDLCompiler" num="872" delta="old" >"D:\mario\display.v" Line 36: Using initial value of <arg fmt="%s" index="1">character_width</arg> since it is never assigned
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="1499" delta="new" >"D:\mario\mario\ipcore_dir\pipe_body_rom.v" Line 39: Empty module &lt;<arg fmt="%s" index="1">pipe_body_rom</arg>&gt; remains a black box.
+<msg type="warning" file="HDLCompiler" num="872" delta="old" >"D:\mario\display.v" Line 37: Using initial value of <arg fmt="%s" index="1">pipes_width</arg> since it is never assigned
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="189" delta="new" >"D:\mario\display.v" Line 83: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">a</arg>&gt;. Formal port size is <arg fmt="%d" index="2">6</arg>-bit while actual signal size is <arg fmt="%d" index="1">10</arg>-bit.
+<msg type="warning" file="HDLCompiler" num="872" delta="old" >"D:\mario\display.v" Line 38: Using initial value of <arg fmt="%s" index="1">coin_width</arg> since it is never assigned
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="1499" delta="new" >"D:\mario\mario\ipcore_dir\coin_rom.v" Line 39: Empty module &lt;<arg fmt="%s" index="1">coin_rom</arg>&gt; remains a black box.
+<msg type="warning" file="HDLCompiler" num="872" delta="old" >"D:\mario\display.v" Line 39: Using initial value of <arg fmt="%s" index="1">ignore</arg> since it is never assigned
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="189" delta="new" >"D:\mario\display.v" Line 87: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">a</arg>&gt;. Formal port size is <arg fmt="%d" index="2">10</arg>-bit while actual signal size is <arg fmt="%d" index="1">32</arg>-bit.
+<msg type="warning" file="HDLCompiler" num="1499" delta="old" >"D:\mario\mario\ipcore_dir\back_rom.v" Line 39: Empty module &lt;<arg fmt="%s" index="1">back_rom</arg>&gt; remains a black box.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="634" delta="new" >"D:\mario\top.v" Line 13: Net &lt;<arg fmt="%s" index="1">fail</arg>&gt; does not have a driver.
+<msg type="warning" file="HDLCompiler" num="189" delta="old" >"D:\mario\display.v" Line 59: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">a</arg>&gt;. Formal port size is <arg fmt="%d" index="2">13</arg>-bit while actual signal size is <arg fmt="%d" index="1">32</arg>-bit.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="552" delta="new" >"D:\mario\top.v" Line 31: Input port <arg fmt="%s" index="1">coin[31]</arg> is not connected on this instance
+<msg type="warning" file="HDLCompiler" num="1499" delta="old" >"D:\mario\mario\ipcore_dir\mario_rom.v" Line 39: Empty module &lt;<arg fmt="%s" index="1">mario_rom</arg>&gt; remains a black box.
 </msg>
 
-<msg type="warning" file="Xst" num="2898" delta="new" >Port &apos;<arg fmt="%s" index="1">coin</arg>&apos;, unconnected in block instance &apos;<arg fmt="%s" index="2">display</arg>&apos;, is tied to GND.
+<msg type="warning" file="HDLCompiler" num="189" delta="old" >"D:\mario\display.v" Line 67: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">a</arg>&gt;. Formal port size is <arg fmt="%d" index="2">8</arg>-bit while actual signal size is <arg fmt="%d" index="1">32</arg>-bit.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">D:\mario\top.v</arg>&quot; line <arg fmt="%s" index="2">20</arg>: Output port &lt;<arg fmt="%s" index="3">coin</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">control</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="warning" file="HDLCompiler" num="1499" delta="old" >"D:\mario\mario\ipcore_dir\mario_up_rom.v" Line 39: Empty module &lt;<arg fmt="%s" index="1">mario_up_rom</arg>&gt; remains a black box.
 </msg>
 
-<msg type="warning" file="Xst" num="653" delta="new" >Signal &lt;<arg fmt="%s" index="1">fail</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
+<msg type="warning" file="HDLCompiler" num="189" delta="old" >"D:\mario\display.v" Line 71: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">a</arg>&gt;. Formal port size is <arg fmt="%d" index="2">8</arg>-bit while actual signal size is <arg fmt="%d" index="1">32</arg>-bit.
 </msg>
 
-<msg type="warning" file="Xst" num="653" delta="new" >Signal &lt;<arg fmt="%s" index="1">coin&lt;30:20&gt;</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
+<msg type="warning" file="HDLCompiler" num="1499" delta="old" >"D:\mario\mario\ipcore_dir\pipe_head_rom.v" Line 39: Empty module &lt;<arg fmt="%s" index="1">pipe_head_rom</arg>&gt; remains a black box.
 </msg>
 
-<msg type="warning" file="Xst" num="2404" delta="new" > FFs/Latches &lt;<arg fmt="%s" index="1">pipe3</arg>&lt;<arg fmt="%d" index="2">31</arg>:<arg fmt="%d" index="3">28</arg>&gt;&gt; (without init value) have a constant value of <arg fmt="%c" index="4">0</arg> in block &lt;<arg fmt="%s" index="5">control</arg>&gt;.
+<msg type="warning" file="HDLCompiler" num="189" delta="old" >"D:\mario\display.v" Line 79: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">a</arg>&gt;. Formal port size is <arg fmt="%d" index="2">11</arg>-bit while actual signal size is <arg fmt="%d" index="1">32</arg>-bit.
 </msg>
 
-<msg type="warning" file="Xst" num="2404" delta="new" > FFs/Latches &lt;<arg fmt="%s" index="1">pipe2</arg>&lt;<arg fmt="%d" index="2">31</arg>:<arg fmt="%d" index="3">28</arg>&gt;&gt; (without init value) have a constant value of <arg fmt="%c" index="4">0</arg> in block &lt;<arg fmt="%s" index="5">control</arg>&gt;.
+<msg type="warning" file="HDLCompiler" num="1499" delta="old" >"D:\mario\mario\ipcore_dir\pipe_body_rom.v" Line 39: Empty module &lt;<arg fmt="%s" index="1">pipe_body_rom</arg>&gt; remains a black box.
 </msg>
 
-<msg type="warning" file="Xst" num="2404" delta="new" > FFs/Latches &lt;<arg fmt="%s" index="1">pipe1</arg>&lt;<arg fmt="%d" index="2">31</arg>:<arg fmt="%d" index="3">28</arg>&gt;&gt; (without init value) have a constant value of <arg fmt="%c" index="4">0</arg> in block &lt;<arg fmt="%s" index="5">control</arg>&gt;.
+<msg type="warning" file="HDLCompiler" num="189" delta="old" >"D:\mario\display.v" Line 86: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">a</arg>&gt;. Formal port size is <arg fmt="%d" index="2">6</arg>-bit while actual signal size is <arg fmt="%d" index="1">10</arg>-bit.
 </msg>
 
-<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">mario&lt;14:10&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+<msg type="warning" file="HDLCompiler" num="1499" delta="old" >"D:\mario\mario\ipcore_dir\coin_rom.v" Line 39: Empty module &lt;<arg fmt="%s" index="1">coin_rom</arg>&gt; remains a black box.
 </msg>
 
-<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">pipe_1&lt;31:28&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+<msg type="warning" file="HDLCompiler" num="189" delta="old" >"D:\mario\display.v" Line 90: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">a</arg>&gt;. Formal port size is <arg fmt="%d" index="2">10</arg>-bit while actual signal size is <arg fmt="%d" index="1">32</arg>-bit.
 </msg>
 
-<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">pipe_2&lt;31:28&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+<msg type="warning" file="HDLCompiler" num="1499" delta="old" >"D:\mario\mario\ipcore_dir\title_rom.v" Line 39: Empty module &lt;<arg fmt="%s" index="1">title_rom</arg>&gt; remains a black box.
 </msg>
 
-<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">pipe_3&lt;31:28&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+<msg type="warning" file="HDLCompiler" num="189" delta="old" >"D:\mario\display.v" Line 94: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">a</arg>&gt;. Formal port size is <arg fmt="%d" index="2">12</arg>-bit while actual signal size is <arg fmt="%d" index="1">32</arg>-bit.
 </msg>
 
-<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">coin&lt;30:20&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+<msg type="warning" file="HDLCompiler" num="1499" delta="old" >"D:\mario\mario\ipcore_dir\mode_rom.v" Line 39: Empty module &lt;<arg fmt="%s" index="1">mode_rom</arg>&gt; remains a black box.
 </msg>
 
-<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">fail</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+<msg type="warning" file="HDLCompiler" num="189" delta="old" >"D:\mario\display.v" Line 98: Size mismatch in connection of port &lt;<arg fmt="%s" index="3">a</arg>&gt;. Formal port size is <arg fmt="%d" index="2">12</arg>-bit while actual signal size is <arg fmt="%d" index="1">32</arg>-bit.
 </msg>
 
-<msg type="info" file="Xst" num="1767" delta="new" >HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+<msg type="warning" file="HDLCompiler" num="552" delta="old" >"D:\mario\top.v" Line 21: Input port <arg fmt="%s" index="1">mode</arg> is not connected on this instance
 </msg>
 
-<msg type="info" file="Xst" num="3218" delta="new" >HDL ADVISOR - The RAM &lt;<arg fmt="%s" index="1">Mram_AN</arg>&gt; will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+<msg type="warning" file="HDLCompiler" num="552" delta="old" >"D:\mario\top.v" Line 33: Input port <arg fmt="%s" index="1">coin[31]</arg> is not connected on this instance
 </msg>
 
-<msg type="info" file="Xst" num="2146" delta="new" >In block &lt;<arg fmt="%s" index="1">display</arg>&gt;, <arg fmt="%s" index="2">Counter</arg> &lt;<arg fmt="%s" index="3">d_1/clkdiv</arg>&gt; </msg>
+<msg type="warning" file="Xst" num="2898" delta="old" >Port &apos;<arg fmt="%s" index="1">mode</arg>&apos;, unconnected in block instance &apos;<arg fmt="%s" index="2">control</arg>&apos;, is tied to GND.
+</msg>
+
+<msg type="warning" file="Xst" num="2898" delta="old" >Port &apos;<arg fmt="%s" index="1">pipe_up</arg>&apos;, unconnected in block instance &apos;<arg fmt="%s" index="2">control</arg>&apos;, is tied to GND.
+</msg>
+
+<msg type="warning" file="Xst" num="2898" delta="old" >Port &apos;<arg fmt="%s" index="1">pipe_down</arg>&apos;, unconnected in block instance &apos;<arg fmt="%s" index="2">control</arg>&apos;, is tied to GND.
+</msg>
+
+<msg type="warning" file="Xst" num="2898" delta="old" >Port &apos;<arg fmt="%s" index="1">coin</arg>&apos;, unconnected in block instance &apos;<arg fmt="%s" index="2">display</arg>&apos;, is tied to GND.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">D:\mario\top.v</arg>&quot; line <arg fmt="%s" index="2">21</arg>: Output port &lt;<arg fmt="%s" index="3">coin</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">control</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="warning" file="Xst" num="2972" delta="old" >&quot;<arg fmt="%s" index="1">D:\mario\control.v</arg>&quot; line <arg fmt="%d" index="2">58</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">m3</arg>&gt; of block &lt;<arg fmt="%s" index="4">pbdebounce</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">control</arg>&gt;. Underlying logic will be removed.
+</msg>
+
+<msg type="warning" file="Xst" num="2972" delta="old" >&quot;<arg fmt="%s" index="1">D:\mario\control.v</arg>&quot; line <arg fmt="%d" index="2">63</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">m4</arg>&gt; of block &lt;<arg fmt="%s" index="4">pbdebounce</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">control</arg>&gt;. Underlying logic will be removed.
+</msg>
+
+<msg type="warning" file="Xst" num="653" delta="old" >Signal &lt;<arg fmt="%s" index="1">coin&lt;30:20&gt;</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
+</msg>
+
+<msg type="info" file="Xst" num="1799" delta="old" >State <arg fmt="%s" index="1">11</arg> is never reached in FSM &lt;<arg fmt="%s" index="2">status</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2404" delta="old" > FFs/Latches &lt;<arg fmt="%s" index="1">pipe1</arg>&lt;<arg fmt="%d" index="2">31</arg>:<arg fmt="%d" index="3">28</arg>&gt;&gt; (without init value) have a constant value of <arg fmt="%c" index="4">0</arg> in block &lt;<arg fmt="%s" index="5">control</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2404" delta="old" > FFs/Latches &lt;<arg fmt="%s" index="1">pipe3</arg>&lt;<arg fmt="%d" index="2">31</arg>:<arg fmt="%d" index="3">28</arg>&gt;&gt; (without init value) have a constant value of <arg fmt="%c" index="4">0</arg> in block &lt;<arg fmt="%s" index="5">control</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2404" delta="old" > FFs/Latches &lt;<arg fmt="%s" index="1">pipe2</arg>&lt;<arg fmt="%d" index="2">31</arg>:<arg fmt="%d" index="3">28</arg>&gt;&gt; (without init value) have a constant value of <arg fmt="%c" index="4">0</arg> in block &lt;<arg fmt="%s" index="5">control</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">mario&lt;14:10&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">pipe_1&lt;31:28&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">pipe_2&lt;31:28&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">pipe_3&lt;31:28&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
 
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">Mmult_n01251</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">display</arg>&gt;.
+<msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">coin&lt;30:20&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 </msg>
 
-<msg type="warning" file="Xst" num="1710" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">pipe1_x_0</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">control</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="info" file="Xst" num="1767" delta="old" >HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
 </msg>
 
-<msg type="warning" file="Xst" num="1710" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">pipe2_x_0</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">control</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="info" file="Xst" num="3218" delta="old" >HDL ADVISOR - The RAM &lt;<arg fmt="%s" index="1">Mram_AN</arg>&gt; will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
 </msg>
+
+<msg type="info" file="Xst" num="2146" delta="old" >In block &lt;<arg fmt="%s" index="1">display</arg>&gt;, <arg fmt="%s" index="2">Counter</arg> &lt;<arg fmt="%s" index="3">d_0/d0/clkdiv</arg>&gt; </msg>
 
-<msg type="warning" file="Xst" num="1710" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">pipe3_x_0</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">control</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">Mmult_n01971</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">display</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">pipe3_10</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">control</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">Mmult_n01921</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">display</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">pipe2_10</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">control</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">Mmult_n01831</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">display</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">pipe1_10</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">control</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">pipe1_x_0</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">control</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">coin_status_6</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">display</arg>&gt;.
+<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">pipe2_x_0</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">control</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">coin_status_7</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">display</arg>&gt;.
+<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">pipe3_x_0</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">control</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">coin_status_8</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">display</arg>&gt;.
+<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">pipe1_10</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">control</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">coin_status_9</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">display</arg>&gt;.
+<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">pipe3_10</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">control</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">coin_status_10</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">display</arg>&gt;.
+<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">pipe2_10</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">control</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">coin_status_11</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">display</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">d_0/d0/clkdiv_23</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">display</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">coin_status_12</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">display</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">d_0/d0/clkdiv_24</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">display</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">coin_status_13</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">display</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">d_0/d0/clkdiv_25</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">display</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">coin_status_14</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">display</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">d_0/d0/clkdiv_26</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">display</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">coin_status_15</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">display</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">d_0/d0/clkdiv_27</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">display</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">coin_status_16</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">display</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">d_0/d0/clkdiv_28</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">display</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">coin_status_17</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">display</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">d_0/d0/clkdiv_29</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">display</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">coin_status_18</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">display</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">d_0/d0/clkdiv_30</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">display</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">coin_status_19</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">display</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">d_0/d0/clkdiv_31</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">display</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">coin_status_20</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">display</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">coin_status_6</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">display</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">coin_status_21</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">display</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">coin_status_7</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">display</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">coin_status_22</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">display</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">coin_status_8</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">display</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">coin_status_23</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">display</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">coin_status_9</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">display</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">coin_status_24</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">display</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">coin_status_10</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">display</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">coin_status_25</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">display</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">coin_status_11</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">display</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">coin_status_26</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">display</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">coin_status_12</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">display</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">coin_status_27</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">display</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">coin_status_13</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">display</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">coin_status_28</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">display</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">coin_status_14</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">display</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">coin_status_29</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">display</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">coin_status_15</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">display</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">coin_status_30</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">display</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">coin_status_16</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">display</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">coin_status_31</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">display</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">coin_status_17</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">display</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">d_1/clkdiv_18</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">display</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">coin_status_18</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">display</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">d_1/clkdiv_19</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">display</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">coin_status_19</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">display</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">d_1/clkdiv_20</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">display</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">coin_status_20</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">display</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">d_1/clkdiv_21</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">display</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">coin_status_21</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">display</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">d_1/clkdiv_22</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">display</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">coin_status_22</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">display</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">d_1/clkdiv_23</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">display</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">coin_status_23</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">display</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">d_1/clkdiv_24</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">display</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">coin_status_24</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">display</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">d_1/clkdiv_25</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">display</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">coin_status_25</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">display</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">d_1/clkdiv_26</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">display</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">coin_status_26</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">display</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">d_1/clkdiv_27</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">display</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">coin_status_27</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">display</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">d_1/clkdiv_28</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">display</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">coin_status_28</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">display</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">d_1/clkdiv_29</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">display</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">coin_status_29</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">display</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">d_1/clkdiv_30</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">display</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">coin_status_30</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">display</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">d_1/clkdiv_31</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">display</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">coin_status_31</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">display</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="3001" delta="new" >This design contains one or more registers or latches with an active
+<msg type="warning" file="Xst" num="3001" delta="old" >This design contains one or more registers or latches with an active
 asynchronous set and asynchronous reset. While this circuit can be built,
 it creates a sub-optimal implementation in terms of area, power and
 performance. For a more optimal implementation Xilinx highly recommends
@@ -334,82 +382,70 @@ one of the following:
           (timing simulation highly recommended when using this option)
 </msg>
 
-<msg type="warning" file="Xst" num="1710" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">control/bird_falling_3</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">control/bird_flying_15</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">control/m2/cnt_31</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">control/bird_flying_14</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">control/m2/cnt_30</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">control/bird_flying_13</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">control/m2/cnt_29</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">control/m2/cnt_31</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">control/m2/cnt_28</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">control/m2/cnt_30</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">control/m2/cnt_27</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">control/m2/cnt_29</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">control/m2/cnt_26</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">control/m2/cnt_28</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">control/m2/cnt_25</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">control/m2/cnt_27</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">control/m2/cnt_24</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">control/m2/cnt_26</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">control/m2/cnt_23</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">control/m2/cnt_25</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">display/coin_status_5</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">control/m2/cnt_24</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">display/coin_status_4</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">control/m2/cnt_23</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">display/coin_status_3</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">control/pipe2_y_0</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">top</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;control/gap2_0&gt; </arg>
 </msg>
 
-<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">display/coin_status_2</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">top</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">control/pipe3_y_0</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">top</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;control/gap3_0&gt; </arg>
 </msg>
 
-<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">control/pipe2_y_0</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">top</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;control/gap2_0&gt; </arg>
+<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">display/vga_sync/h_count_0</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">top</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;display/vga_sync/col_addr_0&gt; </arg>
 </msg>
 
-<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">control/pipe3_y_0</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">top</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;control/gap3_0&gt; </arg>
+<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">display/vga_sync/h_count_1</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">top</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;display/vga_sync/col_addr_1&gt; </arg>
 </msg>
 
-<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">display/vga_sync/h_count_0</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">top</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;display/vga_sync/col_addr_0&gt; </arg>
+<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">display/vga_sync/h_count_2</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">top</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;display/vga_sync/col_addr_2&gt; </arg>
 </msg>
 
-<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">display/vga_sync/h_count_1</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">top</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;display/vga_sync/col_addr_1&gt; </arg>
+<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">display/vga_sync/h_count_3</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">top</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;display/vga_sync/col_addr_3&gt; </arg>
 </msg>
 
-<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">display/vga_sync/h_count_2</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">top</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;display/vga_sync/col_addr_2&gt; </arg>
+<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">control/coin_10</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">top</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;control/gap1_0&gt; </arg>
 </msg>
 
-<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">display/vga_sync/h_count_3</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">top</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;display/vga_sync/col_addr_3&gt; </arg>
+<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">control/pipe3_0</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">top</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;control/pipe3_20&gt; </arg>
 </msg>
 
-<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">control/coin_10</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">top</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;control/gap1_0&gt; </arg>
+<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">control/pipe2_0</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">top</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;control/pipe2_20&gt; </arg>
 </msg>
 
-<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">control/m0/clk_div_0</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">top</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;display/coin_status_0&gt; </arg>
-</msg>
-
-<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">control/m0/clk_div_1</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">top</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;display/coin_status_1&gt; </arg>
-</msg>
-
-<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">control/pipe2_0</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">top</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;control/pipe2_20&gt; </arg>
-</msg>
-
-<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">control/pipe3_0</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">top</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;control/pipe3_20&gt; </arg>
-</msg>
-
-<msg type="info" file="Xst" num="2169" delta="new" >HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+<msg type="info" file="Xst" num="2169" delta="old" >HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
 </msg>
 
 </messages>
