@@ -1,0 +1,50 @@
+Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -lib secureip -o D:/mario/mario/dsiplay_test1_isim_beh.exe -prj D:/mario/mario/dsiplay_test1_beh.prj work.dsiplay_test1 work.glbl 
+ISim P.20131013 (signature 0x7708f090)
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Determining compilation order of HDL files
+Analyzing Verilog file "D:/mario/mario/../MyMC14495.v" into library work
+Analyzing Verilog file "D:/mario/mario/../dispsync.v" into library work
+Analyzing Verilog file "D:/mario/mario/../clkdiv.v" into library work
+Analyzing Verilog file "D:/mario/mario/../vga_sync.v" into library work
+Analyzing Verilog file "D:/mario/mario/ipcore_dir/pipe_head_rom.v" into library work
+Analyzing Verilog file "D:/mario/mario/ipcore_dir/pipe_body_rom.v" into library work
+Analyzing Verilog file "D:/mario/mario/ipcore_dir/mario_up_rom.v" into library work
+Analyzing Verilog file "D:/mario/mario/ipcore_dir/mario_rom.v" into library work
+Analyzing Verilog file "D:/mario/mario/ipcore_dir/back_rom.v" into library work
+Analyzing Verilog file "D:/mario/mario/../DispNum.v" into library work
+Analyzing Verilog file "D:/mario/mario/../display.v" into library work
+Analyzing Verilog file "D:/mario/mario/../dsiplay_test1.v" into library work
+Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
+Starting static elaboration
+WARNING:HDLCompiler:189 - "D:/mario/mario/../display.v" Line 53: Size mismatch in connection of port <a>. Formal port size is 13-bit while actual signal size is 32-bit.
+WARNING:HDLCompiler:189 - "D:/mario/mario/../display.v" Line 61: Size mismatch in connection of port <a>. Formal port size is 8-bit while actual signal size is 32-bit.
+WARNING:HDLCompiler:189 - "D:/mario/mario/../display.v" Line 65: Size mismatch in connection of port <a>. Formal port size is 8-bit while actual signal size is 32-bit.
+WARNING:HDLCompiler:189 - "D:/mario/mario/../display.v" Line 73: Size mismatch in connection of port <a>. Formal port size is 11-bit while actual signal size is 32-bit.
+WARNING:HDLCompiler:189 - "D:/mario/mario/../display.v" Line 80: Size mismatch in connection of port <a>. Formal port size is 6-bit while actual signal size is 10-bit.
+Completed static elaboration
+Compiling module clkdiv
+Compiling module dispsync
+Compiling module INV
+Compiling module MyMC14495
+Compiling module DispNum
+Compiling module DIST_MEM_GEN_V7_2(C_FAMILY="kint...
+Compiling module back_rom
+Compiling module DIST_MEM_GEN_V7_2(C_FAMILY="kint...
+Compiling module mario_rom
+Compiling module DIST_MEM_GEN_V7_2(C_FAMILY="kint...
+Compiling module mario_up_rom
+Compiling module DIST_MEM_GEN_V7_2(C_FAMILY="kint...
+Compiling module pipe_head_rom
+Compiling module DIST_MEM_GEN_V7_2(C_FAMILY="kint...
+Compiling module pipe_body_rom
+Compiling module vga_sync
+Compiling module display
+Compiling module dsiplay_test1
+Compiling module glbl
+Time Resolution for simulation is 1ps.
+Waiting for 12 sub-compilation(s) to finish...
+Compiled 19 Verilog Units
+Built simulation executable D:/mario/mario/dsiplay_test1_isim_beh.exe
+Fuse Memory Usage: 31716 KB
+Fuse CPU Usage: 500 ms

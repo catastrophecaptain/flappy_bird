@@ -1,0 +1,10 @@
+Command line:
+   dsiplay_test1_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  61633
+
+Thu Dec 28 16:46:02 2023
+
+
+ Elaboration Time: 0.078125 sec

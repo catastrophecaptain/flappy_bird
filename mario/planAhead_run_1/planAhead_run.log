@@ -1,0 +1,27 @@
+
+****** PlanAhead v14.7 (64-bit)
+  **** Build 321239 by xbuild on Fri Sep 27 19:29:51 MDT 2013
+    ** Copyright 1986-1999, 2001-2013 Xilinx, Inc. All Rights Reserved.
+
+INFO: [Common 17-78] Attempting to get a license: PlanAhead
+INFO: [Common 17-290] Got license for PlanAhead
+INFO: [Device 21-36] Loading parts and site information from C:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/arch.xml
+Parsing RTL primitives file [C:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+Finished parsing RTL primitives file [C:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+start_gui
+source D:/mario/mario/pa.fromNetlist.tcl
+# create_project -name mario -dir "D:/mario/mario/planAhead_run_1" -part xc7k160tffg676-1
+# set_property design_mode GateLvl [get_property srcset [current_run -impl]]
+# set_property edif_top_file "D:/mario/mario/top.ngc" [ get_property srcset [ current_run ] ]
+# add_files -norecurse { {D:/mario/mario} {ipcore_dir} }
+# add_files [list {ipcore_dir/back_rom.ncf}] -fileset [get_property constrset [current_run]]
+# add_files [list {ipcore_dir/mario_rom.ncf}] -fileset [get_property constrset [current_run]]
+# add_files [list {ipcore_dir/pipe_body_rom.ncf}] -fileset [get_property constrset [current_run]]
+# add_files [list {ipcore_dir/pipe_head_rom.ncf}] -fileset [get_property constrset [current_run]]
+INFO: [Common 17-41] Interrupt caught. Command should exit soon.
+INFO: [Common 17-344] 'current_fileset' was cancelled
+INFO: [Common 17-344] 'source' was cancelled
+exit
+ERROR: [Common 17-39] 'stop_gui' failed due to earlier errors.
+INFO: [Common 17-206] Exiting PlanAhead at Fri Dec 22 06:53:57 2023...
+INFO: [Common 17-83] Releasing license: PlanAhead

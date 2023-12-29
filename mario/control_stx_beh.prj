@@ -1,0 +1,5 @@
+verilog isim_temp "../pbdebounce.v"
+verilog isim_temp "../clk_div.v"
+verilog isim_temp "../clk_100ms.v"
+verilog isim_temp "../control.v"
+verilog isim_temp "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v"
