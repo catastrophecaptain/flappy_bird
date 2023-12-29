@@ -67,8 +67,8 @@ module control (
       score <= 16'd0;
       bird_falling <= 4'b0000;  //小鸟距离开始下落的时间，为0时小鸟下落
       coin[31] <= 1'b1;
-      coin[9:0] <= 10'd650;
-      coin[19:10] <= 20+(clk_div+50)*(440-coin_length);
+      coin[9:0] <= 10'd660+clk_div % 20;
+      coin[19:10] <= 20+(clk_div+50)%(440-coin_length);
       pipe1_y <= pipe_head + clk_div % (330-pipe_head-pipe_head);  // 生成pipe_head到480-150-pipe_head的随机数
       pipe2_y <= pipe_head + (clk_div+10) % (330-pipe_head-pipe_head);  // 生成pipe_head到480-150-pipe_head的随机数
       pipe3_y <= pipe_head + (clk_div+20) % (330-pipe_head-pipe_head);  // 生成pipe_head到480-150-pipe_head的随机数
@@ -107,8 +107,8 @@ module control (
         gap1 <= 100 + clk_div % 50;
         pass1 <= 0;
         coin[31] <= 1'b1;
-        coin[9:0] <= 10'd650;
-        coin[19:10] <= 20+(clk_div+50)*(440-coin_length);
+        coin[9:0] <= 10'd660+clk_div % 20;
+        coin[19:10] <= 20+(clk_div+50)%(440-coin_length);
       end
       if (pipe2_x <= 0) begin  //管道移出屏幕后重新生成 
         pipe2_x <= 20'd640;
@@ -145,7 +145,7 @@ module control (
       end
       if(coin[31]&&((bird_y<=coin[19:10]+coin_length)&&(bird_y+bird_height>=coin[19:10])&&(bird_x<=coin[9:0]+coin_length)&&(bird_x+bird_width>=coin[9:0]))) begin
         coin[31] <= 1'b0;
-        score <= score + 1;
+        score <= score + 2;
       end
       pipe1 <= {gap1,pipe1_x, pipe1_y};
       pipe2 <= {gap2,pipe2_x, pipe2_y};
