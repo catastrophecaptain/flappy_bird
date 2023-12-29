@@ -10,18 +10,20 @@ module top (
     output wire vs,
     output wire btn
 );
-wire fail;
+wire [1:0]status;
     assign btn=1'b0;
     wire [15:0] score;
     wire [15:0] mario;
     wire [31:0] pipe_1;
     wire [31:0] pipe_2;
     wire [31:0] pipe_3;
+    wire [31:0] coin;
     control control (
         .clk(clk),
         .rst(clr),
         .up(up),
-        .fail(fail),
+        .coin(coin),
+        .status(status),
         .score(score),
         .bird_y(mario),
         .pipe1(pipe_1),
@@ -30,8 +32,9 @@ wire fail;
     );
     display display (
         .clk(clk),
-        .fail(fail),
+        .clr(clr),
         .score(score),
+        .status(status),
         .mario(mario),
         .pipe_1(pipe_1),
         .pipe_2(pipe_2),
