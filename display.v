@@ -2,6 +2,7 @@
 module display (
     input wire clk,
     input wire fail,
+    input wire [1:0] status,
     input wire [15:0] score,
     input wire [15:0] mario,
     input wire [31:0] pipe_1,
