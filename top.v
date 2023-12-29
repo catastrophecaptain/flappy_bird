@@ -2,6 +2,7 @@ module top (
     input wire clk,
     input wire up,
     input wire clr,
+    input wire mode,
     output wire [6:0] seg,
     output wire dp,
     output wire [3:0] AN,
@@ -28,7 +29,8 @@ wire [1:0]status;
         .bird_y(mario),
         .pipe1(pipe_1),
         .pipe2(pipe_2),
-        .pipe3(pipe_3)
+        .pipe3(pipe_3),
+        .mode(mode)
     );
     display display (
         .clk(clk),

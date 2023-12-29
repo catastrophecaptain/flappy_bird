@@ -120,7 +120,7 @@ module display (
   assign isstart = (status[0] && ~status[1]) || (~status && status[1]);
   assign istitle = (x >= 65 && x <= 613) && (y >= 40 && y <= 81);
   assign ismode = (x >= 228 && x <= 451) && (y >= 300 && y <= 363)&&(|(color_mode^ignore));
-  assign ishighlight=(status[0]&&~status[1]&&((x>=228&&x<=451)&&(y>=300&&y<=327)))|(status[0]&&~status[1]&&((x>=228&&x<=451)&&(y>=336&&y<=363)));
+  assign ishighlight=(status[0]&&~status[1]&&((x>=228&&x<=451)&&(y>=300&&y<=327)))|(~status[0]&&status[1]&&((x>=228&&x<=451)&&(y>=336&&y<=363)));
   assign {ispipe,pipe_gap[7:0], pipe_address, pipe_height} = 
     ((0 <= x - pipe_1[19:10]) && (x - pipe_1[19:10] < pipes_width)) ? {1'b1, pipe_1[27:20],pipe_1[19:10],pipe_1[9:0]} :
     ((0 <= x - pipe_2[19:10]) && (x - pipe_2[19:10] < pipes_width)) ? {1'b1, pipe_2[27:20],pipe_2[19:10],pipe_2[9:0]} :
