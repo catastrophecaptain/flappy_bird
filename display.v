@@ -99,11 +99,11 @@ module display (
       .col_addr(x),
       .row_addr(y[8:0])
   );
-  always @(posedge clk) begin
-    if (coin_status[0] & coin_status[1]) begin
+  always @(posedge clk_extend[21]) begin
+    if (coin_status[0] && coin_status[1]) begin
       coin_status <= 0;
     end else begin
-      coin_status = coin_status + 1;
+      coin_status <= coin_status + 1;
     end
   end
   assign {ispipe,pipe_gap[7:0], pipe_address, pipe_height} = 
