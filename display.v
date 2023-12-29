@@ -7,6 +7,7 @@ module display (
     input wire [31:0] pipe_1,
     input wire [31:0] pipe_2,
     input wire [31:0] pipe_3,
+    input wire [31:0] coin,
     output wire [6:0] seg,
     output wire dp,
     output wire [3:0] AN,
@@ -17,7 +18,7 @@ module display (
   // mario[9:0] y, mario[15] state
   // pipe[9:1] height of one of two pipes in a group, pipe[19:10] address of pipes, pipe[27:20] height gap of pipes in group
   wire [31:0] clk_extend;
-  wire [11:0] color_mario, color_pipe_head, color_pipe_body, color_mario_down, color_mario_up;
+  wire [11:0] color_mario, color_pipe_head, color_pipe_body, color_mario_down, color_mario_up,color_coin;
   wire [11:0] color_back;
   reg  [11:0] ignore;
   wire [ 9:0] x;
@@ -26,16 +27,17 @@ module display (
   reg clr = 1;
   wire [9:0] pipe_height, pipe_address, pipe_gap;
   wire ishead, ispipe, isbody;
-  wire ismario;
+  wire ismario,iscoin;
   wire [11:0] rgb_temp;
   integer back_width = 76, back_height = 57, display_width = 640, display_height = 480;
   integer character_width = 16, character_height = 16, character_address = 40;
   integer pipes_width = 50, pipes_head_height = 23;
+  integer coin_width = 16, coin_height = 16, coin_status = 0;
   initial begin
     ignore = 12'h00f;
   end
   assign y[9] = 1'b0;
-  assign pipe_gap[9:8]=0;
+  assign pipe_gap[9:8] = 0;
   DispNum d_0 (
       .clk(clk),
       .RST(1'b0),
@@ -51,10 +53,10 @@ module display (
       .clkdiv(clk_extend)
   );
   back_rom d_2 (
-      .a  ((((y * back_height) / display_height) * back_width) + (x * back_width /display_width)),
+      .a  ((((y * back_height) / display_height) * back_width) + (x * back_width / display_width)),
       .spo(color_back)
   );
-    /*back_rom d_2 (
+  /*back_rom d_2 (
       .a  ((((y * 57) / 480) * 76) + (x * 76 /640)),
       .spo(color_back)
   );*/
@@ -80,6 +82,10 @@ module display (
       .spo(color_pipe_body),
       .a  (x - pipe_address)
   );
+  coin_rom d_7 (
+      .spo(color_coin),
+      .a  ((y-coin[19:10])*coin_width*4+coin_width*coin_status+x-coin[9:0])
+  );
   vga_sync vga_sync (
       .vga_clk(clk_extend[1]),
       .clrn(clr),
@@ -93,6 +99,13 @@ module display (
       .col_addr(x),
       .row_addr(y[8:0])
   );
+  always @(posedge clk) begin
+    if (coin_status[0] & coin_status[1]) begin
+      coin_status <= 0;
+    end else begin
+      coin_status = coin_status + 1;
+    end
+  end
   assign {ispipe,pipe_gap[7:0], pipe_address, pipe_height} = 
     ((0 <= x - pipe_1[19:10]) && (x - pipe_1[19:10] < pipes_width)) ? {1'b1, pipe_1[27:20],pipe_1[19:10],pipe_1[9:0]} :
     ((0 <= x - pipe_2[19:10]) && (x - pipe_2[19:10] < pipes_width)) ? {1'b1, pipe_2[27:20],pipe_2[19:10],pipe_2[9:0]} :
@@ -103,6 +116,7 @@ module display (
                 ((-y + pipe_height+pipe_gap+pipes_head_height-2 >= 10'd0) && (-y + pipe_height+pipe_gap-2+pipes_head_height <pipes_head_height)))&&(|(color_pipe_head^ignore)) ? 1'b1 : 1'b0;
   assign isbody = (y < pipe_height - pipes_head_height) || (pipe_height + pipe_gap+pipes_head_height-2 < y)&&(|(color_pipe_body^ignore)) ? 1'b1 : 1'b0;
   assign ismario = ((character_address <= x) && (x < character_address+character_width) && (y >= mario[9:0]) && (y < mario[9:0] + character_height) && (|(color_mario^ignore))) ? 1'b1 : 1'b0;
-  assign rgb_temp = rdn?12'h000:ismario ? color_mario : ispipe&&ishead ? color_pipe_head : ispipe&&isbody ? color_pipe_body : color_back;
-//assign rgb_temp=rdn?12'h000:color_back;
+  assign iscoin = coin[15]&&((|(color_coin^ignore))&&(x-coin[9:0]<coin_width)&&(y-coin[19:10]<coin_height));
+  assign rgb_temp = rdn?12'h000:ismario ? color_mario :iscoin?color_coin: ispipe&&ishead ? color_pipe_head : ispipe&&isbody ? color_pipe_body : color_back;
+  //assign rgb_temp=rdn?12'h000:color_back;
 endmodule
