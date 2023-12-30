@@ -17,24 +17,22 @@ module kb_decoder (
       .clk(clk),
       .kb_clk(kb_clk),
       .data(data),
-      .keycode(keycode)
+      .keycode(keycode),
+      .sign(sign)
   );
   always @(posedge clk) begin
     case(keycode)
-    8'h00:
-    begin
-    end
     8'h29:
     begin
-      space <= ~space;
+      space <= sign;
     end
     8'h75:
     begin
-      up <= ~up;
+      up <= sign;
     end
     8'h72:
     begin
-      down <= ~down;
+      down <= sign;
     end
     endcase
   end
