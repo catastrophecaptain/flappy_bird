@@ -36,7 +36,7 @@ module control (
   wire [9:0] bird_width = 9'd16;  //bird_width为小鸟宽度
   wire [9:0] bird_height = 9'd16;  //bird_height为小鸟高度
   wire [9:0] pipe_width = 9'd50;  //pipe_width为管道宽度
-  wire [7:0] pipe_head=8'd30;
+  wire [7:0] pipe_head=8'd23;
   wire [7:0] coin_length=8'd16;
   reg [7:0]gap1;  //gap1为管道1的间隙，供小鸟通过
   reg [7:0]gap2;  //gap2为管道2的间隙，供小鸟通过
@@ -120,19 +120,19 @@ module control (
         endcase
       end
       if (up1 && !fail && !longpress) begin  //按钮按下时up为1，小鸟飞行4个周期
-        bird_flying <= 16'd5000;
+        bird_flying <= 16'd500;
         bird_y[15]   <= 1'b1;
         longpress <= 1;
         bird_falltime <= 0;
       end
       else begin 
         if ((bird_flying<=0)||fail) begin  //小鸟下落
-          bird_y <= bird_y - bird_falltime/10;
+          bird_y <= bird_y - bird_falltime;
           bird_y[15] <= 1'b0;
           bird_falltime <= bird_falltime + 1;
         end
         else begin  //小鸟按惯性向上飞
-          bird_y <= bird_y + bird_flying / 10;
+          bird_y <= bird_y + bird_flying;
           bird_flying <= bird_flying - 1;
         end
       end
