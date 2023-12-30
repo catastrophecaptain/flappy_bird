@@ -4,7 +4,7 @@ module clk_100ms(clk,clk_100ms);
     output reg clk_100ms=0;
     reg[31:0]cnt;
     always@(posedge clk)begin
-    if(cnt<5_000_00)begin
+    if(cnt<1_000_000)begin
         cnt<=cnt+1'b1;
     end else begin
         cnt<=0;
