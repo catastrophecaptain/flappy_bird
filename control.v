@@ -119,7 +119,7 @@ module control (
           3:pipe3_y<=pipe3_y-1;
         endcase
       end
-      if (up1 && !fail && !longpress) begin  //按钮按下时up为1，小鸟飞行4个周期
+      if (up1 && !fail) begin  //按钮按下时up为1，小鸟飞行4个周期
         bird_flying <= 16'd500;
         bird_y[15]   <= 1'b1;
         longpress <= 1;
@@ -127,12 +127,12 @@ module control (
       end
       else begin 
         if ((bird_flying<=0)||fail) begin  //小鸟下落
-          bird_y <= bird_y - bird_falltime;
+          bird_y <= bird_y - 10;
           bird_y[15] <= 1'b0;
           bird_falltime <= bird_falltime + 1;
         end
         else begin  //小鸟按惯性向上飞
-          bird_y <= bird_y + bird_flying;
+          bird_y <= bird_y + 20;
           bird_flying <= bird_flying - 1;
         end
       end
