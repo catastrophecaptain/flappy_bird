@@ -9,7 +9,8 @@ module top (
     output wire [11:0] rgb,
     output wire hs,
     output wire vs,
-    output wire btn
+    output wire btn,
+    output wire audio
 );
 wire [1:0]status;
     assign btn=1'b0;
@@ -47,5 +48,9 @@ wire [1:0]status;
         .hs(hs),
         .vs(vs),
         .coin(coin)
+    );
+    buzzer_controller buzzer_controller (
+        .clk(clk),
+        .buzzer(audio)
     );
 endmodule
