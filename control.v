@@ -112,7 +112,7 @@ module control (
           3:pipe3_y<=pipe3_y+1;
         endcase
       end
-      if (pipedown1&&!fail&&status==3)begin
+      if (pipedown1&&!fail&&status==3&&!longpress)begin
         case(cnt)
           1:pipe1_y<=pipe1_y-1;
           2:pipe2_y<=pipe2_y-1;
@@ -120,7 +120,7 @@ module control (
         endcase
       end
       if (up1 && !fail) begin  //按钮按下时up为1，小鸟飞行4个周期
-        bird_flying <= 16'd4;
+        bird_flying <= 16'd10;
         bird_y[15]   <= 1'b1;
         longpress <= 1;
         bird_falltime <= 0;
