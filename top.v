@@ -12,7 +12,7 @@ module top (
     output wire btn,
     output wire audio
 );
-wire [1:0]status;
+    wire [1:0]status;
     assign btn=1'b0;
     wire [15:0] score;
     wire [15:0] mario;
