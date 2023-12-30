@@ -45,6 +45,7 @@ wire [1:0]status;
         .AN(AN),
         .rgb(rgb),
         .hs(hs),
-        .vs(vs)
+        .vs(vs),
+        .coin(coin)
     );
 endmodule
