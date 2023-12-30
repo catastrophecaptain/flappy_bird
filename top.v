@@ -49,8 +49,8 @@ wire [1:0]status;
         .vs(vs),
         .coin(coin)
     );
-    buzzer_controller buzzer_controller (
+    /*BuzzerController buzzer_controller (
         .clk(clk),
         .buzzer(audio)
-    );
+    );*/
 endmodule
