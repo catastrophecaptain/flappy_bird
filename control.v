@@ -7,7 +7,7 @@ module control (
     input pipe_up,
     input pipe_down,
     output reg [1:0]status,  
-    output reg [15:0] score,  //分数
+    output reg [15:0]score,  //分数
     output reg [15:0]bird_y, //bird_y为小鸟下侧y坐标，第16位记录小鸟是否在下落，为0时小鸟下落，为1时小鸟上升
     output reg [31:0]pipe1,//pipe1储存管道1的x和y和gap，x占高10位，y占低10位，x为管子左边界坐标，y为管子上侧坐标
     output reg [31:0]pipe2,//pipe2储存管道2的x和y和gap，x占高10位，y占低10位，x为管子左边界坐标，y为管子上侧坐标
@@ -125,16 +125,14 @@ module control (
         longpress <= 1;
         bird_falltime <= 0;
       end
-      else begin 
-        if ((bird_flying<=0)||fail) begin  //小鸟下落
-          bird_y <= bird_y - 10;
-          bird_y[15] <= 1'b0;
-          bird_falltime <= bird_falltime + 1;
-        end
-        else begin  //小鸟按惯性向上飞
-          bird_y <= bird_y + 20;
-          bird_flying <= bird_flying - 1;
-        end
+      else if ((bird_flying<=0)||fail) begin  //小鸟下落
+        bird_y <= bird_y - 10;
+        bird_y[15] <= 1'b0;
+        bird_falltime <= bird_falltime + 1;
+      end
+      else begin  //小鸟按惯性向上飞
+        bird_y <= bird_y + 20;
+        bird_flying <= bird_flying - 1;
       end
       if (!up1) begin
         longpress <= 0;
