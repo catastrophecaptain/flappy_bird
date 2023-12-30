@@ -53,4 +53,5 @@ module top (
         .clk(clk),
         .buzzer(audio)
     );*/
+    assign audio=0;
 endmodule
