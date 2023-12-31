@@ -73,7 +73,7 @@ module control (
   initial begin
     status <= 2'b01;
   end
-  always @(posedge clk_100ms or negedge rst) begin
+  always @(posedge clk_100ms) begin
     if (!rst) begin
       if(status==0||status==3)status<=1;
       if(pipe_up||pipe_down) begin
@@ -151,28 +151,28 @@ module control (
         pipe3_x <= pipe3_x - 2;
         coin[9:0] <= coin[9:0] - 2;
       end
-      if (pipe1_x+pipe_width <= 0) begin  //管道移出屏幕后重新生成
+      if (pipe1_x<= 0) begin  //管道移出屏幕后重新生成
         pipe1_x <= 20'd640;
         pipe1_y <= pipe_head + clk_div % (330-pipe_head-pipe_head);  // 生成pipe_head到480-150-pipe_head的随机数
         gap1 <= 100 + clk_div % 50;
         pass1 <= 0;
         cnt <= 1;
       end
-      if (pipe2_x+pipe_width <= 0) begin  //管道移出屏幕后重新生成 
+      if (pipe2_x<= 0) begin  //管道移出屏幕后重新生成 
         pipe2_x <= 20'd640;
         pipe2_y <= pipe_head + clk_div % (330-pipe_head-pipe_head);  // 生成pipe_head到480-150-pipe_head的随机数
         gap2 <= 100 + clk_div % 50;
         pass2 <= 0;
         cnt <= 2;
       end
-      if (pipe3_x+pipe_width <= 0) begin  //管道移出屏幕后重新生成
+      if (pipe3_x<= 0) begin  //管道移出屏幕后重新生成
         pipe3_x <= 20'd640;
         pipe3_y <= pipe_head + clk_div % (330-pipe_head-pipe_head);  // 生成pipe_head到480-150-pipe_head的随机数
         gap3 <= 100 + clk_div % 50;
         pass3 <= 0;
         cnt <= 3;
       end
-      if(coin[31]==0&&coin[9:0]<=0) begin
+      if(coin[31]==0||coin[9:0]<=0) begin
         coin[31] <= 1'b1;
         case(cnt)
           1:coin[9:0] <= pipe1_x+pipe_width+clk_div % 20;
