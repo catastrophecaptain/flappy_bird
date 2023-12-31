@@ -31,11 +31,11 @@ module control (
   reg [9:0] pipe2_y;  //pipe2_y为管2的y上边界坐标
   reg [9:0] pipe3_x;  //pipe3_x为管3的x左边界坐标
   reg [9:0] pipe3_y;  //pipe3_y为管3的y上边界坐标
-  wire [9:0] bird_x = 9'd40;  //bird_x为小鸟左边界坐标，小鸟是不动的，所以x坐标为常数
-  wire [9:0] gap = 9'd50;  //gap为管道间隙，供小鸟通过
-  wire [9:0] bird_width = 9'd16;  //bird_width为小鸟宽度
-  wire [9:0] bird_height = 9'd16;  //bird_height为小鸟高度
-  wire [9:0] pipe_width = 9'd50;  //pipe_width为管道宽度
+  wire [9:0] bird_x = 10'd70;  //bird_x为小鸟左边界坐标，小鸟是不动的，所以x坐标为常数
+  wire [9:0] gap = 10'd50;  //gap为管道间隙，供小鸟通过
+  wire [9:0] bird_width = 10'd16;  //bird_width为小鸟宽度
+  wire [9:0] bird_height = 10'd16;  //bird_height为小鸟高度
+  wire [9:0] pipe_width = 10'd50;  //pipe_width为管道宽度
   wire [7:0] pipe_head=8'd23;
   wire [7:0] coin_length=8'd16;
   reg [7:0]gap1;  //gap1为管道1的间隙，供小鸟通过
@@ -128,13 +128,15 @@ module control (
         endcase
       end
       if (up && !fail &&!longpress) begin  //按钮按下时up为1，小鸟飞行4个周期
-        bird_flying <= 16'd12;
+        if(bird_flying<=0)bird_flying <= 16'd8;
+        else if(bird_flying<=16'd13)bird_flying <= bird_flying + 5;
+        else bird_flying <= 16'd13;
         bird_y[15]   <= 1'b1;
         longpress <= 1;
         bird_falltime <= 0;
       end
       if ((bird_flying<=0)||fail) begin  //小鸟下落
-        bird_y[14:0] <= bird_y[14:0] + 5;
+        bird_y[14:0] <= bird_y[14:0] + 4;
         bird_y[15] <= 1'b0;
         bird_falltime <= bird_falltime + 1;
       end
