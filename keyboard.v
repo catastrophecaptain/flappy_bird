@@ -42,7 +42,7 @@ module keyboard (
           if (data) begin
             confirm <= ~confirm;
           end
-          code_temp = {code_temp[6:0], data};
+          code_temp <= {code_temp[6:0], data};
         end
         keycode <= 8'h00;
       end
