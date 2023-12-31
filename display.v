@@ -33,7 +33,7 @@ module display (
   wire isstart, istitle, ishighlight, ismode;
   wire [11:0] rgb_temp;
   integer back_width = 76, back_height = 57, display_width = 640, display_height = 480;
-  integer character_width = 16, character_height = 16, character_address = 40;
+  integer character_width = 16, character_height = 16, character_address = 70;
   integer pipes_width = 50, pipes_head_height = 23;
   integer coin_width = 16, coin_height = 16, coin_status = 0;
   integer
@@ -72,10 +72,6 @@ module display (
       .a  ((((y * back_height) / display_height) * back_width) + (x * back_width / display_width)),
       .spo(color_back)
   );
-  /*back_rom d_2 (
-      .a  ((((y * 57) / 480) * 76) + (x * 76 /640)),
-      .spo(color_back)
-  );*/
   mario_rom d_3 (
       .a  (((y - mario[9:0]) * character_width + (x - character_address))),
       .spo(color_mario_down)
@@ -84,10 +80,6 @@ module display (
       .a  (((y - mario[9:0]) * character_width + (x - character_address))),
       .spo(color_mario_up)
   );
-  /*mario_rom d_3 (
-      .a  ((y - mario[9:0]) * 16 + (x - 10'd10)),
-      .spo(color_mario)
-  );*/
   pipe_head_rom d_4 (
       .a((((y>=pipe_height-pipes_head_height&&y<pipe_height)?
       y-pipe_height+pipes_head_height:pipe_height+pipe_gap+pipes_head_height-2-y)*pipes_width
@@ -130,31 +122,6 @@ module display (
       coin_status <= coin_status + 1;
     end
   end
-  /*assign isstart = (status[0] && ~status[1]) || (~status && status[1]);
-  assign istitle = (x >= title_width_start && x < title_width_start+title_multi*title_width) && (y >= title_height_start && y < title_height_start+title_multi*title_height);//mod
-  assign ismode = (x >= mode_width_start && x < mode_width_start+mode_multi*mode_width) && (y >= mode_height_start && y < mode_height_start+mode_multi*mode_height);//mod
-  assign ishighlight=(status[0]&&~status[1]&&((x>=mode_width_start&&x<mode_width_start+mode_multi*mode_width)&&(y>=mode_height_start&&y<mode_height_start+mode_line_height*mode_multi)))
-  |(~status[0]&&status[1]&&((x>=mode_width_start&&x<mode_width_start+mode_multi*mode_width)&&(y>=mode_height_start+mode_multi*(mode_height-mode_line_height)&&y<mode_height_start+mode_multi*mode_height)));//mod
-  assign {ispipe,pipe_gap[7:0], pipe_address, pipe_height} = 
-    ((0 <= x - pipe_1[19:10]) && (x - pipe_1[19:10] < pipes_width)) ? {1'b1, pipe_1[27:20],pipe_1[19:10],pipe_1[9:0]} :
-    ((0 <= x - pipe_2[19:10]) && (x - pipe_2[19:10] < pipes_width)) ? {1'b1, pipe_2[27:20],pipe_2[19:10],pipe_2[9:0]} :
-    ((0 <= x - pipe_3[19:10]) && (x - pipe_3[19:10] < pipes_width)) ? {1'b1, pipe_3[27:20],pipe_3[19:10],pipe_3[9:0]} :
-                                                              {1'b0,28'b0};
-  assign color_mario = mario[15] ? color_mario_up : color_mario_down;
-  assign ishead = (((y >=pipe_height - pipes_head_height) && (y < pipe_height)) || 
-                ((-y + pipe_height+pipe_gap+pipes_head_height-2 >= 10'd0) && (-y + pipe_height+pipe_gap-2+pipes_head_height <pipes_head_height)))&&(|(color_pipe_head^ignore)) ? 1'b1 : 1'b0;
-  assign isbody = (y < pipe_height - pipes_head_height) || (pipe_height + pipe_gap+pipes_head_height-2 < y)&&(|(color_pipe_body^ignore)) ? 1'b1 : 1'b0;
-  assign ismario = ((character_address <= x) && (x < character_address+character_width) && (y >= mario[9:0]) && (y < mario[9:0] + character_height) && (|(color_mario^ignore))) ? 1'b1 : 1'b0;
-  assign iscoin = coin[31]&&((|(color_coin^ignore))&&(x-coin[9:0]<coin_width)&&(y-coin[19:10]<coin_height)&&(x-coin[9:0]>=0)&&(y-coin[19:0]>=0));
-  assign color_start= istitle?color_title:ismode?color_mode:ishighlight?12'h888:12'h000;
-  assign rgb_temp = 
-    rdn?12'h000:
-    isstart?color_start:
-    ismario ? color_mario :
-    iscoin?color_coin:
-    ispipe&&ishead ? color_pipe_head :
-    ispipe&&isbody ? color_pipe_body:
-    color_back;*/
   assign isstart = (status[0] && ~status[1]) || (~status && status[1]);
 
   assign istitle = (x >= title_width_start && x < title_width_start + title_multi * title_width) 
@@ -206,5 +173,4 @@ module display (
     ispipe && ishead ? color_pipe_head :
     ispipe && isbody ? color_pipe_body :
     color_back;
-  //assign rgb_temp=rdn?12'h000:color_back;
 endmodule
