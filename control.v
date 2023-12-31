@@ -36,7 +36,7 @@ module control (
   wire [9:0] bird_width = 10'd16;  //bird_width为小鸟宽度
   wire [9:0] bird_height = 10'd16;  //bird_height为小鸟高度
   wire [9:0] pipe_width = 10'd50;  //pipe_width为管道宽度
-  wire [7:0] pipe_head=8'd23;
+  wire [7:0] pipe_head=8'd40;
   wire [7:0] coin_length=8'd16;
   reg [7:0]gap1;  //gap1为管道1的间隙，供小鸟通过
   reg [7:0]gap2;  //gap2为管道2的间隙，供小鸟通过
@@ -101,9 +101,9 @@ module control (
       coin[31] <= 1'b1;
       coin[9:0] <= 10'd650+pipe_width+clk_div % 20;
       coin[19:10] <= 20+(clk_div+50)%(440-coin_length);
-      pipe1_y <= pipe_head + clk_div % (330-pipe_head-pipe_head);  // 生成pipe_head到480-150-pipe_head的随机数
-      pipe2_y <= pipe_head + (clk_div+10) % (330-pipe_head-pipe_head);  // 生成pipe_head到480-150-pipe_head的随机数
-      pipe3_y <= pipe_head + (clk_div+20) % (330-pipe_head-pipe_head);  // 生成pipe_head到480-150-pipe_head的随机数
+      pipe1_y <= pipe_head + clk_div % (310-pipe_head-pipe_head);  // 生成pipe_head到480-150-pipe_head的随机数
+      pipe2_y <= pipe_head + (clk_div+10) % (310-pipe_head-pipe_head);  // 生成pipe_head到480-150-pipe_head的随机数
+      pipe3_y <= pipe_head + (clk_div+20) % (310-pipe_head-pipe_head);  // 生成pipe_head到480-150-pipe_head的随机数
       gap1 <= 100 + clk_div % 50;
       gap2 <= 100 + (clk_div+10) % 50;
       gap3 <= 100 + (clk_div+20) % 50;
@@ -128,9 +128,7 @@ module control (
         endcase
       end
       if (up && !fail &&!longpress) begin  //按钮按下时up为1，小鸟飞行4个周期
-        if(bird_flying<=0)bird_flying <= 16'd8;
-        else if(bird_flying<=16'd13)bird_flying <= bird_flying + 5;
-        else bird_flying <= 16'd13;
+        bird_flying <= 16'd10;
         bird_y[15]   <= 1'b1;
         longpress <= 1;
         bird_falltime <= 0;
@@ -156,22 +154,22 @@ module control (
       end
       if (pipe1_x<= 2) begin  //管道移出屏幕后重新生成
         pipe1_x <= 20'd640;
-        pipe1_y <= pipe_head + clk_div % (330-pipe_head-pipe_head);  // 生成pipe_head到480-150-pipe_head的随机数
-        gap1 <= 100 + clk_div % 50;
+        pipe1_y <= pipe_head + clk_div % (310-pipe_head-pipe_head);  // 生成pipe_head到480-150-pipe_head的随机数
+        gap1 <= 120 + clk_div % 50;
         //pass1 <= 0;
         cnt <= 1;
       end
       if (pipe2_x<= 2) begin  //管道移出屏幕后重新生成 
         pipe2_x <= 20'd640;
-        pipe2_y <= pipe_head + clk_div % (330-pipe_head-pipe_head);  // 生成pipe_head到480-150-pipe_head的随机数
-        gap2 <= 100 + clk_div % 50;
+        pipe2_y <= pipe_head + clk_div % (310-pipe_head-pipe_head);  // 生成pipe_head到480-150-pipe_head的随机数
+        gap2 <= 120 + clk_div % 50;
         //pass2 <= 0;
         cnt <= 2;
       end
       if (pipe3_x<= 2) begin  //管道移出屏幕后重新生成
         pipe3_x <= 20'd640;
-        pipe3_y <= pipe_head + clk_div % (330-pipe_head-pipe_head);  // 生成pipe_head到480-150-pipe_head的随机数
-        gap3 <= 100 + clk_div % 50;
+        pipe3_y <= pipe_head + clk_div % (310-pipe_head-pipe_head);  // 生成pipe_head到480-150-pipe_head的随机数
+        gap3 <= 120 + clk_div % 50;
         //pass3 <= 0;
         cnt <= 3;
       end
