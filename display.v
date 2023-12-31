@@ -32,6 +32,7 @@ module display (
   wire ismario, iscoin;
   wire isstart, istitle, ishighlight, ismode;
   wire [11:0] rgb_temp;
+  wire [16:0] score_d;
   integer back_width = 76, back_height = 57, display_width = 640, display_height = 480;
   integer character_width = 16, character_height = 16, character_address = 70;
   integer pipes_width = 50, pipes_head_height = 23;
@@ -122,6 +123,10 @@ module display (
       coin_status <= coin_status + 1;
     end
   end
+  assign score_d[3:0] = score % 10;
+  assign score_d[7:4] = score / 10 % 10;
+  assign score_d[11:8] = score / 100 % 10;
+  assign score_d[15:12] = score / 1000 % 10;
   assign isstart = (status[0] && ~status[1]) || (~status && status[1]);
 
   assign istitle = (x >= title_width_start && x < title_width_start + title_multi * title_width) 
