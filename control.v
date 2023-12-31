@@ -3,10 +3,10 @@ module control (
     input wire clk,  //时钟
     input wire rst,  //rst为1时游戏重新开始
     input up,  //up为1时小鸟飞起，连接btn
-    input mode,  //mode为1时双人模式，为0时单人模式
+    //input mode,  //mode为1时双人模式，为0时单人模式
     input pipe_up,
     input pipe_down,
-    output reg [1:0]status,  
+    output reg [1:0]status=2'b01,  
     output reg [15:0]score,  //分数
     output reg [15:0]bird_y, //bird_y为小鸟下侧y坐标，第16位记录小鸟是否在下落，为0时小鸟下落，为1时小鸟上升
     output reg [31:0]pipe1,//pipe1储存管道1的x和y和gap，x占高10位，y占低10位，x为管子左边界坐标，y为管子上侧坐标
@@ -16,9 +16,9 @@ module control (
 	 //output reg [3:0]bird_falling
 );
   wire [31:0] clk_div;
-  wire up1;
-  wire pipeup1;
-  wire pipedown1;
+  // wire up1;
+  // wire pipeup1;
+  // wire pipedown1;
   reg cnt;
   reg fail;//fail为1游戏结束
   reg pass1;
@@ -50,32 +50,30 @@ module control (
       .rst(1'b0),
       .clk_div(clk_div)
   );  //时钟分频，将时钟分频100ms
-  pbdebounce m1 (
-      .clk_1ms(clk_div[17]),
-      .btn(up),
-      .pbreg(up1)
-  );  //按钮去抖动，将按钮信号去抖动
-  pbdebounce m3 (
-      .clk_1ms(clk_div[17]),
-      .btn(pipe_up),
-      .pbreg(pipeup1)
-  );  //按钮去抖动，将按钮信号去抖动
-  pbdebounce m4 (
-      .clk_1ms(clk_div[17]),
-      .btn(pipe_down),
-      .pbreg(pipedown1)
-  );  //按钮去抖动，将按钮信号去抖动
+  // pbdebounce m1 (
+  //     .clk_1ms(clk_div[17]),
+  //     .btn(up),
+  //     .pbreg(up1)
+  // );  //按钮去抖动，将按钮信号去抖动
+  // pbdebounce m3 (
+  //     .clk_1ms(clk_div[17]),
+  //     .btn(pipe_up),
+  //     .pbreg(pipeup1)
+  // );  //按钮去抖动，将按钮信号去抖动
+  // pbdebounce m4 (
+  //     .clk_1ms(clk_div[17]),
+  //     .btn(pipe_down),
+  //     .pbreg(pipedown1)
+  // );  //按钮去抖动，将按钮信号去抖动
   clk_100ms m2 (
       .clk(clk),
       .clk_100ms(clk_100ms)
   );  //100ms时钟
   always @(posedge clk_100ms or negedge rst) begin
     if (!rst) begin
-      if(mode) begin
-        status <= 2'b10;
-      end
-      else begin
-        status <= 2'b01;
+      if(pipe_up||pipe_down) begin
+        if(status==1)status <= 2'b10;
+        else status <= 2'b01;
       end
       bird_y[14:0] <= 16'd240;  //小鸟初始位置
       bird_y[15] <= 1'b0;
@@ -106,21 +104,21 @@ module control (
     end else begin
       if(status==1)status <= 2'b00;
       if(status==2)status <= 2'b11;
-      if  (pipeup1&&!fail&&status==3)begin
+      if  (pipe_up&&!fail&&status==3)begin
         case(cnt)
           1:pipe1_y<=pipe1_y+1;
           2:pipe2_y<=pipe2_y+1;
           3:pipe3_y<=pipe3_y+1;
         endcase
       end
-      if (pipedown1&&!fail&&status==3&&!longpress)begin
+      if (pipe_down&&!fail&&status==3)begin
         case(cnt)
           1:pipe1_y<=pipe1_y-1;
           2:pipe2_y<=pipe2_y-1;
           3:pipe3_y<=pipe3_y-1;
         endcase
       end
-      if (up1 && !fail) begin  //按钮按下时up为1，小鸟飞行4个周期
+      if (up && !fail) begin  //按钮按下时up为1，小鸟飞行4个周期
         bird_flying <= 16'd10;
         bird_y[15]   <= 1'b1;
         longpress <= 1;
@@ -135,7 +133,7 @@ module control (
         bird_y <= bird_y + bird_flying;
         bird_flying <= bird_flying - 1;
       end
-      if (!up1) begin
+      if (!up) begin
         longpress <= 0;
       end
       if (!fail) begin  //若游戏未结束，管道移动
@@ -149,9 +147,6 @@ module control (
         pipe1_y <= pipe_head + clk_div % (330-pipe_head-pipe_head);  // 生成pipe_head到480-150-pipe_head的随机数
         gap1 <= 100 + clk_div % 50;
         pass1 <= 0;
-        // coin[31] <= 1'b1;
-        // coin[9:0] <= 10'd650+pipe_width+clk_div % 20;
-        // coin[19:10] <= 20+(clk_div+50)%(440-coin_length);
         cnt <= 1;
       end
       if (pipe2_x <= 0) begin  //管道移出屏幕后重新生成 
