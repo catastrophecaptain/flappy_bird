@@ -5,12 +5,12 @@ module clk_div(
     output reg[31:0]clk_div
 );
 initial begin
-clk_div=0;
+clk_div=32'b0;
 end
     always @(posedge clk or posedge rst) begin
         if(rst)
-            clk_div<=32'd0;
+            clk_div[30:0]<=32'd0;
         else
-            clk_div<=clk_div+1;
+            clk_div[30:0]<=clk_div[30:0]+1;
     end
 endmodule
