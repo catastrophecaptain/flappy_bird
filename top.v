@@ -31,7 +31,8 @@ module top (
         .pipe1(pipe_1),
         .pipe2(pipe_2),
         .pipe3(pipe_3),
-        .mode(mode)
+        .pipe_up(pipe_up),
+        .pipe_down(pipe_down)
     );
     display display (
         .clk(clk),
