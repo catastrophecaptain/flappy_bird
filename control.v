@@ -134,7 +134,7 @@ module control (
         bird_falltime <= 0;
       end
       if ((bird_flying<=0)||fail) begin  //小鸟下落
-        bird_y[14:0] <= bird_y[14:0] + 3;
+        bird_y[14:0] <= bird_y[14:0] + 4;
         bird_y[15] <= 1'b0;
         bird_falltime <= bird_falltime + 1;
       end
@@ -151,21 +151,21 @@ module control (
         pipe3_x <= pipe3_x - 2;
         coin[9:0] <= coin[9:0] - 2;
       end
-      if (pipe1_x<= 0) begin  //管道移出屏幕后重新生成
+      if (pipe1_x<= 2) begin  //管道移出屏幕后重新生成
         pipe1_x <= 20'd640;
         pipe1_y <= pipe_head + clk_div % (330-pipe_head-pipe_head);  // 生成pipe_head到480-150-pipe_head的随机数
         gap1 <= 100 + clk_div % 50;
         pass1 <= 0;
         cnt <= 1;
       end
-      if (pipe2_x<= 0) begin  //管道移出屏幕后重新生成 
+      if (pipe2_x<= 2) begin  //管道移出屏幕后重新生成 
         pipe2_x <= 20'd640;
         pipe2_y <= pipe_head + clk_div % (330-pipe_head-pipe_head);  // 生成pipe_head到480-150-pipe_head的随机数
         gap2 <= 100 + clk_div % 50;
         pass2 <= 0;
         cnt <= 2;
       end
-      if (pipe3_x<= 0) begin  //管道移出屏幕后重新生成
+      if (pipe3_x<= 2) begin  //管道移出屏幕后重新生成
         pipe3_x <= 20'd640;
         pipe3_y <= pipe_head + clk_div % (330-pipe_head-pipe_head);  // 生成pipe_head到480-150-pipe_head的随机数
         gap3 <= 100 + clk_div % 50;
