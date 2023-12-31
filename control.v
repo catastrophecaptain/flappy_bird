@@ -19,7 +19,7 @@ module control (
   // wire up1;
   // wire pipeup1;
   // wire pipedown1;
-  reg cnt;
+  reg [1:0]cnt=3;
   reg fail;//fail为1游戏结束
   reg pass1;
   reg pass2;
@@ -42,6 +42,7 @@ module control (
   reg [7:0]gap2;  //gap2为管道2的间隙，供小鸟通过
   reg [7:0]gap3;  //gap3为管道3的间隙，供小鸟通过
   reg [15:0] bird_flying;  //bird_flying为小鸟距离开始下落的时间，为0时小鸟下落
+  reg old;
   wire clk_100ms;
   reg bird_falltime;
 
@@ -71,10 +72,15 @@ module control (
   );  //100ms时钟
   always @(posedge clk_100ms or negedge rst) begin
     if (!rst) begin
+      if(status==0||status==3)status=1;
       if(pipe_up||pipe_down) begin
-        if(status==1)status <= 2'b10;
-        else status <= 2'b01;
+        if(old==0)begin
+          if(status==1)status <= 2'b10;
+          else status <= 2'b01;
+        end
+        old <= 1;
       end
+      else old <= 0;
       bird_y[14:0] <= 16'd240;  //小鸟初始位置
       bird_y[15] <= 1'b0;
       pipe1_x <= 20'd210;
@@ -106,16 +112,16 @@ module control (
       if(status==2)status <= 2'b11;
       if  (pipe_up&&!fail&&status==3)begin
         case(cnt)
-          1:pipe1_y<=pipe1_y+1;
-          2:pipe2_y<=pipe2_y+1;
-          3:pipe3_y<=pipe3_y+1;
+          1:if(pipe1_y>=pipe_head)pipe1_y<=pipe1_y-1;
+          2:if(pipe2_y>=pipe_head)pipe2_y<=pipe2_y-1;
+          3:if(pipe3_y>=pipe_head)pipe3_y<=pipe3_y-1;
         endcase
       end
       if (pipe_down&&!fail&&status==3)begin
         case(cnt)
-          1:pipe1_y<=pipe1_y-1;
-          2:pipe2_y<=pipe2_y-1;
-          3:pipe3_y<=pipe3_y-1;
+          1:if(pipe1_y+pipe_head<=330)pipe1_y<=pipe1_y+1;
+          2:if(pipe2_y+pipe_head<=330)pipe2_y<=pipe2_y+1;
+          3:if(pipe3_y+pipe_head<=330)pipe3_y<=pipe3_y+1;
         endcase
       end
       if (up && !fail) begin  //按钮按下时up为1，小鸟飞行4个周期
@@ -125,12 +131,12 @@ module control (
         bird_falltime <= 0;
       end
       if ((bird_flying<=0)||fail) begin  //小鸟下落
-        bird_y[14:0] <= bird_y[14:0] - 2;
+        bird_y[14:0] <= bird_y[14:0] + 3;
         bird_y[15] <= 1'b0;
         bird_falltime <= bird_falltime + 1;
       end
       if ((bird_flying>0)&&(!fail)) begin  //小鸟按惯性向上飞
-        bird_y <= bird_y + bird_flying;
+        bird_y <= bird_y - bird_flying;
         bird_flying <= bird_flying - 1;
       end
       if (!up) begin
