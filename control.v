@@ -21,9 +21,9 @@ module control (
   // wire pipedown1;
   reg [1:0]cnt=3;
   reg fail;//fail为1游戏结束
-  reg pass1;
-  reg pass2;
-  reg pass3; //pass1,pass2,pass3为小鸟是否通过管道，为1时通过
+  //reg pass1;
+  //reg pass2;
+  //reg pass3; //pass1,pass2,pass3为小鸟是否通过管道，为1时通过
   reg longpress;
   reg [9:0] pipe1_x;  //pipe1_x为管1的x左边界坐标
   reg [9:0] pipe1_y;  //pipe1_y为管1的y上边界坐标
@@ -31,11 +31,11 @@ module control (
   reg [9:0] pipe2_y;  //pipe2_y为管2的y上边界坐标
   reg [9:0] pipe3_x;  //pipe3_x为管3的x左边界坐标
   reg [9:0] pipe3_y;  //pipe3_y为管3的y上边界坐标
-  wire [9:0] bird_x = 9'd40;  //bird_x为小鸟左边界坐标，小鸟是不动的，所以x坐标为常数
-  wire [9:0] gap = 9'd50;  //gap为管道间隙，供小鸟通过
-  wire [9:0] bird_width = 9'd16;  //bird_width为小鸟宽度
-  wire [9:0] bird_height = 9'd16;  //bird_height为小鸟高度
-  wire [9:0] pipe_width = 9'd50;  //pipe_width为管道宽度
+  wire [9:0] bird_x = 10'd70;  //bird_x为小鸟左边界坐标，小鸟是不动的，所以x坐标为常数
+  wire [9:0] gap = 10'd50;  //gap为管道间隙，供小鸟通过
+  wire [9:0] bird_width = 10'd16;  //bird_width为小鸟宽度
+  wire [9:0] bird_height = 10'd16;  //bird_height为小鸟高度
+  wire [9:0] pipe_width = 10'd50;  //pipe_width为管道宽度
   wire [7:0] pipe_head=8'd23;
   wire [7:0] coin_length=8'd16;
   reg [7:0]gap1;  //gap1为管道1的间隙，供小鸟通过
@@ -90,9 +90,9 @@ module control (
       pipe2_x <= 20'd420;
       pipe3_x <= 20'd630;
       cnt <= 3;
-      pass1 <= 0;
-      pass2 <= 0;
-      pass3 <= 0;//pass1,pass2,pass3为小鸟是否通过管道，为1时通过
+      //pass1 <= 0;
+      //pass2 <= 0;
+      //pass3 <= 0;//pass1,pass2,pass3为小鸟是否通过管道，为1时通过
       bird_falltime <= 0;
       longpress <= 0;
       fail <= 0;
@@ -128,7 +128,9 @@ module control (
         endcase
       end
       if (up && !fail &&!longpress) begin  //按钮按下时up为1，小鸟飞行4个周期
-        bird_flying <= 16'd10;
+        if(bird_flying<=0)bird_flying <= 16'd8;
+        else if(bird_flying<=16'd13)bird_flying <= bird_flying + 5;
+        else bird_flying <= 16'd13;
         bird_y[15]   <= 1'b1;
         longpress <= 1;
         bird_falltime <= 0;
@@ -139,8 +141,9 @@ module control (
         bird_falltime <= bird_falltime + 1;
       end
       if ((bird_flying>0)&&(!fail)) begin  //小鸟按惯性向上飞
-        bird_y <= bird_y - bird_flying;
+        bird_y[14:0] <= bird_y[14:0] - bird_flying;
         bird_flying <= bird_flying - 1;
+        bird_y[15] <= 1'b1;
       end
       if (!up) begin
         longpress <= 0;
@@ -155,21 +158,21 @@ module control (
         pipe1_x <= 20'd640;
         pipe1_y <= pipe_head + clk_div % (330-pipe_head-pipe_head);  // 生成pipe_head到480-150-pipe_head的随机数
         gap1 <= 100 + clk_div % 50;
-        pass1 <= 0;
+        //pass1 <= 0;
         cnt <= 1;
       end
       if (pipe2_x<= 2) begin  //管道移出屏幕后重新生成 
         pipe2_x <= 20'd640;
         pipe2_y <= pipe_head + clk_div % (330-pipe_head-pipe_head);  // 生成pipe_head到480-150-pipe_head的随机数
         gap2 <= 100 + clk_div % 50;
-        pass2 <= 0;
+        //pass2 <= 0;
         cnt <= 2;
       end
       if (pipe3_x<= 2) begin  //管道移出屏幕后重新生成
         pipe3_x <= 20'd640;
         pipe3_y <= pipe_head + clk_div % (330-pipe_head-pipe_head);  // 生成pipe_head到480-150-pipe_head的随机数
         gap3 <= 100 + clk_div % 50;
-        pass3 <= 0;
+        //pass3 <= 0;
         cnt <= 3;
       end
       if(coin[31]==0||coin[9:0]<=0) begin
@@ -188,17 +191,17 @@ module control (
         fail <= 1;
       end
       if (!fail) begin
-        if((!pass1)&&(bird_x>=pipe1_x+pipe_width)) begin
+        if(bird_x==pipe1_x+pipe_width) begin
           score <= score + 1;
-          pass1 <= 1;
+          //pass1 <= 1;
         end
-        if((!pass2)&&(bird_x>=pipe2_x+pipe_width)) begin
+        if(bird_x==pipe2_x+pipe_width) begin
           score <= score + 1;
-          pass2 <= 1;
+          //pass2 <= 1;
         end
-        if((!pass3)&&(bird_x>=pipe3_x+pipe_width)) begin
+        if(bird_x==pipe3_x+pipe_width) begin
           score <= score + 1;
-          pass3 <= 1;
+          //pass3 <= 1;
         end
         //若小鸟通过管道，分数加1
       end
