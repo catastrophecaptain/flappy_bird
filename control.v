@@ -77,7 +77,8 @@ module control (
       else begin
         status <= 2'b01;
       end
-      bird_y <= 16'd240;  //小鸟初始位置
+      bird_y[14:0] <= 16'd240;  //小鸟初始位置
+      bird_y[15] <= 1'b0;
       pipe1_x <= 20'd210;
       pipe2_x <= 20'd420;
       pipe3_x <= 20'd630;
@@ -126,11 +127,11 @@ module control (
         bird_falltime <= 0;
       end
       if ((bird_flying<=0)||fail) begin  //小鸟下落
-        bird_y <= bird_y - 3;
+        bird_y[14:0] <= bird_y[14:0] - 2;
         bird_y[15] <= 1'b0;
         bird_falltime <= bird_falltime + 1;
       end
-      else begin  //小鸟按惯性向上飞
+      if ((bird_flying>0)&&(!fail)) begin  //小鸟按惯性向上飞
         bird_y <= bird_y + bird_flying;
         bird_flying <= bird_flying - 1;
       end
@@ -148,9 +149,9 @@ module control (
         pipe1_y <= pipe_head + clk_div % (330-pipe_head-pipe_head);  // 生成pipe_head到480-150-pipe_head的随机数
         gap1 <= 100 + clk_div % 50;
         pass1 <= 0;
-        coin[31] <= 1'b1;
-        coin[9:0] <= 10'd650+pipe_width+clk_div % 20;
-        coin[19:10] <= 20+(clk_div+50)%(440-coin_length);
+        // coin[31] <= 1'b1;
+        // coin[9:0] <= 10'd650+pipe_width+clk_div % 20;
+        // coin[19:10] <= 20+(clk_div+50)%(440-coin_length);
         cnt <= 1;
       end
       if (pipe2_x <= 0) begin  //管道移出屏幕后重新生成 
@@ -167,9 +168,18 @@ module control (
         pass3 <= 0;
         cnt <= 3;
       end
-      if ((((bird_y <= pipe1_y)||(bird_y+bird_height>=pipe1_y+gap1))&&(bird_x<=pipe1_x+pipe_width)&&(bird_x+bird_width>=pipe1_x))
-                ||(((bird_y <= pipe2_y)||(bird_y+bird_height>=pipe2_y+gap2))&&(bird_x<=pipe2_x+pipe_width)&&(bird_x+bird_width>=pipe2_x))
-                ||(((bird_y <= pipe3_y)||(bird_y+bird_height>=pipe3_y+gap3))&&(bird_x<=pipe3_x+pipe_width)&&(bird_x+bird_width>=pipe3_x))) begin
+      if(coin[31]==0&&coin[9:0]<=0) begin
+        coin[31] <= 1'b1;
+        case(cnt)
+          1:coin[9:0] <= pipe1_x+pipe_width+clk_div % 20;
+          2:coin[9:0] <= pipe2_x+pipe_width+clk_div % 20;
+          3:coin[9:0] <= pipe3_x+pipe_width+clk_div % 20;
+        endcase 
+        coin[19:10] <= 20+(clk_div+50)%(440-coin_length);
+      end
+      if ((((bird_y[14:0] <= pipe1_y)||(bird_y[14:0]+bird_height>=pipe1_y+gap1))&&(bird_x<=pipe1_x+pipe_width)&&(bird_x+bird_width>=pipe1_x))
+                ||(((bird_y[14:0] <= pipe2_y)||(bird_y[14:0]+bird_height>=pipe2_y+gap2))&&(bird_x<=pipe2_x+pipe_width)&&(bird_x+bird_width>=pipe2_x))
+                ||(((bird_y[14:0] <= pipe3_y)||(bird_y[14:0]+bird_height>=pipe3_y+gap3))&&(bird_x<=pipe3_x+pipe_width)&&(bird_x+bird_width>=pipe3_x))) begin
         //若小鸟与管道相撞，游戏结束
         fail <= 1;
       end
@@ -188,7 +198,7 @@ module control (
         end
         //若小鸟通过管道，分数加1
       end
-      if(coin[31]&&((bird_y<=coin[19:10]+coin_length)&&(bird_y+bird_height>=coin[19:10])&&(bird_x<=coin[9:0]+coin_length)&&(bird_x+bird_width>=coin[9:0]))) begin
+      if(coin[31]&&((bird_y[14:0]<=coin[19:10]+coin_length)&&(bird_y[14:0]+bird_height>=coin[19:10])&&(bird_x<=coin[9:0]+coin_length)&&(bird_x+bird_width>=coin[9:0]))) begin
         coin[31] <= 1'b0;
         score <= score + 2;
       end
