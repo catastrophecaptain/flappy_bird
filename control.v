@@ -151,21 +151,21 @@ module control (
         pipe3_x <= pipe3_x - 2;
         coin[9:0] <= coin[9:0] - 2;
       end
-      if (pipe1_x <= 0) begin  //管道移出屏幕后重新生成
+      if (pipe1_x+pipe_width <= 0) begin  //管道移出屏幕后重新生成
         pipe1_x <= 20'd640;
         pipe1_y <= pipe_head + clk_div % (330-pipe_head-pipe_head);  // 生成pipe_head到480-150-pipe_head的随机数
         gap1 <= 100 + clk_div % 50;
         pass1 <= 0;
         cnt <= 1;
       end
-      if (pipe2_x <= 0) begin  //管道移出屏幕后重新生成 
+      if (pipe2_x+pipe_width <= 0) begin  //管道移出屏幕后重新生成 
         pipe2_x <= 20'd640;
         pipe2_y <= pipe_head + clk_div % (330-pipe_head-pipe_head);  // 生成pipe_head到480-150-pipe_head的随机数
         gap2 <= 100 + clk_div % 50;
         pass2 <= 0;
         cnt <= 2;
       end
-      if (pipe3_x <= 0) begin  //管道移出屏幕后重新生成
+      if (pipe3_x+pipe_width <= 0) begin  //管道移出屏幕后重新生成
         pipe3_x <= 20'd640;
         pipe3_y <= pipe_head + clk_div % (330-pipe_head-pipe_head);  // 生成pipe_head到480-150-pipe_head的随机数
         gap3 <= 100 + clk_div % 50;
@@ -187,7 +187,7 @@ module control (
         //若小鸟与管道相撞，游戏结束
         fail <= 1;
       end
-      else if (!fail) begin
+      if (!fail) begin
         if((!pass1)&&(bird_x>=pipe1_x+pipe_width)) begin
           score <= score + 1;
           pass1 <= 1;
