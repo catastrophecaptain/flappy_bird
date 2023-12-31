@@ -48,7 +48,7 @@ module keyboard (
       end
       2'b10: begin
         if (kb_clk_old[2] & ~kb_clk_old[1]) begin
-          if (~(confirm ^ data)) begin
+          if ((confirm ^ data)) begin
             state <= 2'b11;
           end else begin
             state <= 2'b00;
@@ -60,7 +60,8 @@ module keyboard (
       2'b11:
       begin
         state <= 2'b00;
-        keycode <= code_temp;
+        {keycode[0],keycode[1],keycode[2],keycode[3],keycode[4],keycode[5],keycode[6],keycode[7]} <= code_temp;
+        {code_temp[0],code_temp[1],code_temp[2],code_temp[3],code_temp[4],code_temp[5],code_temp[6],code_temp[7]} <= code_temp;
       end
     endcase
   end
