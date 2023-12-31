@@ -36,6 +36,19 @@ module display (
   integer character_width = 16, character_height = 16, character_address = 40;
   integer pipes_width = 50, pipes_head_height = 23;
   integer coin_width = 16, coin_height = 16, coin_status = 0;
+  integer
+      title_width = 183,
+      title_height = 14,
+      title_width_start = 45,
+      title_height_start = 80,
+      title_multi = 3;
+  integer
+      mode_width = 112,
+      mode_height = 32,
+      mode_width_start = 208,
+      mode_height_start = 340,
+      mode_line_height = 14,
+      mode_multi = 2;
   initial begin
     ignore = 12'h00f;
   end
@@ -91,12 +104,12 @@ module display (
   );
   title_rom d_8 (
       .spo(color_title),
-      .a  ((y - 40)/3 * 183 + (x-65)/3)
-  );
-    mode_rom d_9 (
-        .spo(color_mode),
-        .a  ((y - 300)/2*112 + (x - 228)/2)
-    );
+      .a  ((y - title_height_start)/title_multi * title_width + (x-title_width_start)/title_multi)
+  );  // mod
+  mode_rom d_9 (
+      .spo(color_mode),
+      .a  ((y - mode_height_start) / mode_multi * mode_width + (x - mode_width_start) / mode_multi)
+  );  //mod
   vga_sync vga_sync (
       .vga_clk(clk_extend[1]),
       .clrn(clr),
@@ -118,9 +131,10 @@ module display (
     end
   end
   assign isstart = (status[0] && ~status[1]) || (~status && status[1]);
-  assign istitle = (x >= 65 && x <= 613) && (y >= 40 && y <= 81);
-  assign ismode = (x >= 228 && x <= 451) && (y >= 300 && y <= 363)&&(|(color_mode^ignore));
-  assign ishighlight=(status[0]&&~status[1]&&((x>=228&&x<=451)&&(y>=300&&y<=327)))|(~status[0]&&status[1]&&((x>=228&&x<=451)&&(y>=336&&y<=363)));
+  assign istitle = (x >= title_width_start && x < title_width_start+title_multi*title_width) && (y >= title_height_start && y < title_height_start+title_multi*title_height);//mod
+  assign ismode = (x >= mode_width_start && x < mode_width_start+mode_multi*mode_width) && (y >= mode_height_start && y < mode_height_start+mode_multi*mode_height);//mod
+  assign ishighlight=(status[0]&&~status[1]&&((x>=mode_width_start&&x<mode_width_start+mode_multi*mode_width)&&(y>=mode_height_start&&y<mode_height_start+mode_line_height*mode_multi)))
+  |(~status[0]&&status[1]&&((x>=mode_width_start&&x<mode_width_start+mode_multi*mode_width)&&(y>=mode_height_start+mode_multi*(mode_height-mode_line_height)&&y<mode_height_start+mode_multi*mode_height)));//mod
   assign {ispipe,pipe_gap[7:0], pipe_address, pipe_height} = 
     ((0 <= x - pipe_1[19:10]) && (x - pipe_1[19:10] < pipes_width)) ? {1'b1, pipe_1[27:20],pipe_1[19:10],pipe_1[9:0]} :
     ((0 <= x - pipe_2[19:10]) && (x - pipe_2[19:10] < pipes_width)) ? {1'b1, pipe_2[27:20],pipe_2[19:10],pipe_2[9:0]} :
@@ -132,7 +146,7 @@ module display (
   assign isbody = (y < pipe_height - pipes_head_height) || (pipe_height + pipe_gap+pipes_head_height-2 < y)&&(|(color_pipe_body^ignore)) ? 1'b1 : 1'b0;
   assign ismario = ((character_address <= x) && (x < character_address+character_width) && (y >= mario[9:0]) && (y < mario[9:0] + character_height) && (|(color_mario^ignore))) ? 1'b1 : 1'b0;
   assign iscoin = coin[31]&&((|(color_coin^ignore))&&(x-coin[9:0]<coin_width)&&(y-coin[19:10]<coin_height)&&(x-coin[9:0]>=0)&&(y-coin[19:0]>=0));
-  assign color_start= istitle?color_title:ismode?color_mode:ishighlight?12'h666:12'h000;
+  assign color_start= istitle?color_title:ismode?color_mode:ishighlight?12'h888:12'h000;
   assign rgb_temp = rdn?12'h000
   :isstart?color_start
   :ismario ? color_mario 
