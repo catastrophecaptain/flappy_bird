@@ -75,7 +75,7 @@ module control (
   end
   always @(posedge clk_100ms or negedge rst) begin
     if (!rst) begin
-      if(status==0||status==3)status=1;
+      if(status==0||status==3)status<=1;
       if(pipe_up||pipe_down) begin
         if(old==0)begin
           if(status==1)status <= 2'b10;
