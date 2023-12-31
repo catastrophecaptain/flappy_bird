@@ -124,7 +124,7 @@ module control (
           3:if(pipe3_y+pipe_head<=330)pipe3_y<=pipe3_y+1;
         endcase
       end
-      if (up && !fail) begin  //按钮按下时up为1，小鸟飞行4个周期
+      if (up && !fail &&!longpress) begin  //按钮按下时up为1，小鸟飞行4个周期
         bird_flying <= 16'd10;
         bird_y[15]   <= 1'b1;
         longpress <= 1;
