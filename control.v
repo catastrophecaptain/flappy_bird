@@ -6,7 +6,7 @@ module control (
     //input mode,  //mode为1时双人模式，为0时单人模式
     input pipe_up,
     input pipe_down,
-    output reg [1:0]status=2'b01,  
+    output reg [1:0]status,  
     output reg [15:0]score,  //分数
     output reg [15:0]bird_y, //bird_y为小鸟下侧y坐标，第16位记录小鸟是否在下落，为0时小鸟下落，为1时小鸟上升
     output reg [31:0]pipe1,//pipe1储存管道1的x和y和gap，x占高10位，y占低10位，x为管子左边界坐标，y为管子上侧坐标
@@ -70,6 +70,9 @@ module control (
       .clk(clk),
       .clk_100ms(clk_100ms)
   );  //100ms时钟
+  initial begin
+    status <= 2'b01;
+  end
   always @(posedge clk_100ms or negedge rst) begin
     if (!rst) begin
       if(status==0||status==3)status=1;
