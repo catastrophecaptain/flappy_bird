@@ -1,8 +1,9 @@
 module top (
     input wire clk,
-    input wire up,
     input wire clr,
     input wire mode,
+    input wire kb_clk,
+    input wire data,
     output wire [6:0] seg,
     output wire dp,
     output wire [3:0] AN,
@@ -20,10 +21,19 @@ module top (
     wire [31:0] pipe_2;
     wire [31:0] pipe_3;
     wire [31:0] coin;
+    wire space,up,down;
+    kb_decoder kb_decoder (
+        .clk(clk),
+        .kb_clk(kb_clk),
+        .data(data),
+        .up(up),
+        .down(down),
+        .space(space)
+    );
     control control (
         .clk(clk),
         .rst(clr),
-        .up(up),
+        .up(space),
         .coin(coin),
         .status(status),
         .score(score),
@@ -31,8 +41,8 @@ module top (
         .pipe1(pipe_1),
         .pipe2(pipe_2),
         .pipe3(pipe_3),
-        .pipe_up(pipe_up),
-        .pipe_down(pipe_down)
+        .pipe_up(up),
+        .pipe_down(down)
     );
     display display (
         .clk(clk),
