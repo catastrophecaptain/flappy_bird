@@ -158,10 +158,10 @@ module display (
   assign isstart = (status[0] && ~status[1]) || (~status && status[1]);
 
   assign istitle = (x >= title_width_start && x < title_width_start + title_multi * title_width) 
-                 && (y >= title_height_start && y < title_height_start + title_multi * title_height);
+                 && (y >= title_height_start && y < title_height_start + title_multi * title_height)&&(|(color_title^ignore));
 
   assign ismode = (x >= mode_width_start && x < mode_width_start + mode_multi * mode_width) 
-                && (y >= mode_height_start && y < mode_height_start + mode_multi * mode_height);
+                && (y >= mode_height_start && y < mode_height_start + mode_multi * mode_height)&&(|(color_mode^ignore));
 
   assign ishighlight = (status[0] && ~status[1] && ((x >= mode_width_start && x < mode_width_start + mode_multi * mode_width) 
                                                   && (y >= mode_height_start && y < mode_height_start + mode_line_height * mode_multi)))
