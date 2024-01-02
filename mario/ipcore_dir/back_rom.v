@@ -41,15 +41,15 @@ module back_rom(
   spo
 );
 
-input [12 : 0] a;
+input [15 : 0] a;
 output [11 : 0] spo;
 
 // synthesis translate_off
 
   DIST_MEM_GEN_V7_2 #(
-    .C_ADDR_WIDTH(13),
+    .C_ADDR_WIDTH(16),
     .C_DEFAULT_DATA("0"),
-    .C_DEPTH(8192),
+    .C_DEPTH(65536),
     .C_FAMILY("kintex7"),
     .C_HAS_CLK(0),
     .C_HAS_D(0),

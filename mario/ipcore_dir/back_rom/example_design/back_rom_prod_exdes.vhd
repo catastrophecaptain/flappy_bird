@@ -75,11 +75,11 @@ use unisim.vcomponents.all;
 --------------------------------------------------------------------------------
 entity back_rom_exdes is
   PORT (
-      A          : IN  STD_LOGIC_VECTOR(13-1-(4*0*boolean'pos(13>4)) downto 0)
+      A          : IN  STD_LOGIC_VECTOR(16-1-(4*0*boolean'pos(16>4)) downto 0)
                  := (OTHERS => '0');
       D          : IN  STD_LOGIC_VECTOR(12-1 downto 0)                := (OTHERS => '0');
-      DPRA       : IN  STD_LOGIC_VECTOR(13-1 downto 0)           := (OTHERS => '0');
-      SPRA       : IN  STD_LOGIC_VECTOR(13-1 downto 0)           := (OTHERS => '0');
+      DPRA       : IN  STD_LOGIC_VECTOR(16-1 downto 0)           := (OTHERS => '0');
+      SPRA       : IN  STD_LOGIC_VECTOR(16-1 downto 0)           := (OTHERS => '0');
       CLK        : IN  STD_LOGIC                                                := '0';
       WE         : IN  STD_LOGIC                                                := '0';
       I_CE       : IN  STD_LOGIC                                                := '1';
@@ -107,7 +107,7 @@ architecture xilinx of back_rom_exdes is
   PORT (
 
       SPO                     : OUT STD_LOGIC_VECTOR(12-1 downto 0);
-      A                       : IN  STD_LOGIC_VECTOR(13-1-(4*0*boolean'pos(13>4)) downto 0)
+      A                       : IN  STD_LOGIC_VECTOR(16-1-(4*0*boolean'pos(16>4)) downto 0)
                               := (OTHERS => '0')
 
 );

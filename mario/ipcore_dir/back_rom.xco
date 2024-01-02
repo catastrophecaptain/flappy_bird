@@ -1,7 +1,7 @@
 ##############################################################
 #
 # Xilinx Core Generator version 14.7
-# Date: Thu Dec 21 19:52:49 2023
+# Date: Sun Dec 31 14:55:15 2023
 #
 ##############################################################
 #
@@ -47,7 +47,7 @@ CSET component_name=back_rom
 CSET data_width=12
 CSET default_data=0
 CSET default_data_radix=16
-CSET depth=8192
+CSET depth=65536
 CSET dual_port_address=non_registered
 CSET dual_port_output_clock_enable=false
 CSET input_clock_enable=false
@@ -70,4 +70,4 @@ CSET sync_reset_qspo=false
 MISC pkg_timestamp=2012-11-21T20:07:40Z
 # END Extra information
 GENERATE
-# CRC: b23d9768
+# CRC: 3a1af649

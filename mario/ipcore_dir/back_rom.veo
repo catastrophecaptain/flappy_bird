@@ -43,7 +43,7 @@
 
 //----------- Begin Cut here for INSTANTIATION Template ---// INST_TAG
 back_rom your_instance_name (
-  .a(a), // input [12 : 0] a
+  .a(a), // input [15 : 0] a
   .spo(spo) // output [11 : 0] spo
 );
 // INST_TAG_END ------ End INSTANTIATION Template ---------

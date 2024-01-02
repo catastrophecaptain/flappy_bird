@@ -1,7 +1,7 @@
 Release 14.7 - par P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Fri Dec 29 20:06:55 2023
+Mon Jan 01 00:14:19 2024
 
 
 INFO: The IO information is provided in three file formats as part of the Place and Route (PAR) process.  These formats are:
@@ -188,7 +188,7 @@ Pinout by Pin Number:
 |AF10      |clr        |IOB      |IO_L24P_T3_33               |INPUT    |LVCMOS15   |33            |          |         |           |NONE     |         |LOCATED   |NO         |NONE            |
 |AF11      |           |         |GND                         |         |           |              |          |         |           |         |         |          |           |                |
 |AF12      |           |IOB18S   |IO_L21N_T3_DQS_33           |UNUSED   |           |33            |          |         |           |         |         |          |           |                |
-|AF13      |           |IOB18S   |IO_L23N_T3_33               |UNUSED   |           |33            |          |         |           |         |         |          |           |                |
+|AF13      |mode       |IOB      |IO_L23N_T3_33               |INPUT    |LVCMOS15   |33            |          |         |           |NONE     |         |LOCATED   |NO         |NONE            |
 |AF14      |           |IOB18M   |IO_L2P_T0_32                |UNUSED   |           |32            |          |         |           |         |         |          |           |                |
 |AF15      |           |IOB18S   |IO_L2N_T0_32                |UNUSED   |           |32            |          |         |           |         |         |          |           |                |
 |AF16      |           |         |VCCO_32                     |         |           |32            |          |         |           |         |1.80     |          |           |                |
@@ -200,7 +200,7 @@ Pinout by Pin Number:
 |AF22      |           |IOB33S   |IO_L24N_T3_12               |UNUSED   |           |12            |          |         |           |         |         |          |           |                |
 |AF23      |           |IOB33S   |IO_L22N_T3_12               |UNUSED   |           |12            |          |         |           |         |         |          |           |                |
 |AF24      |           |IOB33M   |IO_L20P_T3_12               |UNUSED   |           |12            |          |         |           |         |         |          |           |                |
-|AF25      |           |IOB33S   |IO_L20N_T3_12               |UNUSED   |           |12            |          |         |           |         |         |          |           |                |
+|AF25      |audio      |IOB33    |IO_L20N_T3_12               |OUTPUT   |LVCMOS33   |12            |12        |SLOW     |           |         |         |LOCATED   |NO         |NONE            |
 |AF26      |           |         |VCCO_12                     |         |           |12            |          |         |           |         |3.30     |          |           |                |
 |B1        |           |OPAD     |MGTXTXN2_116                |UNUSED   |           |              |          |         |           |         |         |          |           |                |
 |B2        |           |OPAD     |MGTXTXP2_116                |UNUSED   |           |              |          |         |           |         |         |          |           |                |
@@ -480,7 +480,7 @@ Pinout by Pin Number:
 |M16       |           |IOB33    |IO_25_15                    |UNUSED   |           |15            |          |         |           |         |         |          |           |                |
 |M17       |           |IOB33M   |IO_L23P_T3_FOE_B_15         |UNUSED   |           |15            |          |         |           |         |         |          |           |                |
 |M18       |           |         |VCCO_15                     |         |           |15            |          |         |           |         |any******|          |           |                |
-|M19       |           |IOB33S   |IO_L22N_T3_13               |UNUSED   |           |13            |          |         |           |         |         |          |           |                |
+|M19       |data       |IOB33    |IO_L22N_T3_13               |INPUT    |LVCMOS33   |13            |          |         |PULLUP     |NONE     |         |LOCATED   |NO         |NONE            |
 |M20       |           |IOB33S   |IO_L7N_T1_13                |UNUSED   |           |13            |          |         |           |         |         |          |           |                |
 |M21       |vs         |IOB33    |IO_L10P_T1_13               |OUTPUT   |LVCMOS33   |13            |12        |FAST     |           |         |         |LOCATED   |NO         |NONE            |
 |M22       |hs         |IOB33    |IO_L10N_T1_13               |OUTPUT   |LVCMOS33   |13            |12        |FAST     |           |         |         |LOCATED   |NO         |NONE            |
@@ -505,7 +505,7 @@ Pinout by Pin Number:
 |N15       |           |         |VCCINT                      |         |           |              |          |         |           |         |1.0      |          |           |                |
 |N16       |           |IOB33    |IO_0_13                     |UNUSED   |           |13            |          |         |           |         |         |          |           |                |
 |N17       |           |IOB33S   |IO_L20N_T3_13               |UNUSED   |           |13            |          |         |           |         |         |          |           |                |
-|N18       |           |IOB33M   |IO_L22P_T3_13               |UNUSED   |           |13            |          |         |           |         |         |          |           |                |
+|N18       |kb_clk     |IOB33    |IO_L22P_T3_13               |INPUT    |LVCMOS33   |13            |          |         |PULLUP     |NONE     |         |LOCATED   |NO         |NONE            |
 |N19       |           |IOB33M   |IO_L7P_T1_13                |UNUSED   |           |13            |          |         |           |         |         |          |           |                |
 |N20       |           |         |GND                         |         |           |              |          |         |           |         |         |          |           |                |
 |N21       |rgb<0>     |IOB33    |IO_L12P_T1_MRCC_13          |OUTPUT   |LVCMOS33   |13            |12        |FAST     |           |         |         |LOCATED   |NO         |NONE            |
@@ -635,7 +635,7 @@ Pinout by Pin Number:
 |V15       |           |         |GND                         |         |           |              |          |         |           |         |         |          |           |                |
 |V16       |           |IOB18M   |IO_L20P_T3_32               |UNUSED   |           |32            |          |         |           |         |         |          |           |                |
 |V17       |           |IOB18S   |IO_L20N_T3_32               |UNUSED   |           |32            |          |         |           |         |         |          |           |                |
-|V18       |up         |IOB      |IO_L23P_T3_32               |INPUT    |LVCMOS18*  |32            |          |         |           |NONE     |         |LOCATED   |NO         |NONE            |
+|V18       |           |IOB18M   |IO_L23P_T3_32               |UNUSED   |           |32            |          |         |           |         |         |          |           |                |
 |V19       |           |IOB18S   |IO_L23N_T3_32               |UNUSED   |           |32            |          |         |           |         |         |          |           |                |
 |V20       |           |         |VCCO_12                     |         |           |12            |          |         |           |         |3.30     |          |           |                |
 |V21       |           |IOB33M   |IO_L6P_T0_12                |UNUSED   |           |12            |          |         |           |         |         |          |           |                |

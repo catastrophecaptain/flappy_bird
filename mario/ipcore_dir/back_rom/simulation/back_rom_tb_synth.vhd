@@ -100,7 +100,7 @@ ARCHITECTURE back_rom_synth_ARCH OF back_rom_tb_synth IS
 COMPONENT back_rom_exdes
   PORT (
     SPO        : OUT STD_LOGIC_VECTOR(12-1 downto 0);
-    A          : IN  STD_LOGIC_VECTOR(13-1-(4*0*boolean'pos(13>4)) downto 0)
+    A          : IN  STD_LOGIC_VECTOR(16-1-(4*0*boolean'pos(16>4)) downto 0)
                  := (OTHERS => '0')
       );
 
@@ -117,8 +117,8 @@ END COMPONENT;
   SIGNAL RESET_SYNC_R2 : STD_LOGIC:='1';
   SIGNAL RESET_SYNC_R3 : STD_LOGIC:='1';
 
-  SIGNAL ADDR: STD_LOGIC_VECTOR(12 DOWNTO 0) := (OTHERS => '0');
-  SIGNAL ADDR_R: STD_LOGIC_VECTOR(12 DOWNTO 0) := (OTHERS => '0');
+  SIGNAL ADDR: STD_LOGIC_VECTOR(15 DOWNTO 0) := (OTHERS => '0');
+  SIGNAL ADDR_R: STD_LOGIC_VECTOR(15 DOWNTO 0) := (OTHERS => '0');
   SIGNAL SPO: STD_LOGIC_VECTOR(11 DOWNTO 0) := (OTHERS => '0');
   SIGNAL SPO_R: STD_LOGIC_VECTOR(11 DOWNTO 0) := (OTHERS => '0');
   SIGNAL ITER_R0 : STD_LOGIC := '0';
