@@ -27,6 +27,7 @@ module keyboard (
             end
             state   <= 2'b01;
             confirm <= 0;
+            
           end
         end
         keycode <= 8'h00;
@@ -57,8 +58,7 @@ module keyboard (
         end
         keycode <= 8'h00;
       end
-      2'b11:
-      begin
+      2'b11: begin
         state <= 2'b00;
         {keycode[0],keycode[1],keycode[2],keycode[3],keycode[4],keycode[5],keycode[6],keycode[7]} <= code_temp;
         {code_temp[0],code_temp[1],code_temp[2],code_temp[3],code_temp[4],code_temp[5],code_temp[6],code_temp[7]} <= code_temp;

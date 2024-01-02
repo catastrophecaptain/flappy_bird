@@ -17,8 +17,6 @@ module display (
 );
   // mario[9:0] y, mario[15] state
   // pipe[9:1] height of one of two pipes in a group, pipe[19:10] address of pipes, pipe[27:20] height gap of pipes in group
-  // title x:65-613 y: 40-81
-  // mode  x:228-451 y:300-363
   wire [31:0] clk_extend;
   wire [11:0] color_mario, color_pipe_head, color_pipe_body, color_mario_down, color_mario_up,color_coin,color_start,color_title,color_mode;
   wire [11:0] color_back;
@@ -33,7 +31,7 @@ module display (
   wire isstart, istitle, ishighlight, ismode;
   wire [11:0] rgb_temp;
   wire [16:0] score_d;
-  integer back_width = 76, back_height = 57, display_width = 640, display_height = 480;
+  integer back_width = 256, back_height = 192, display_width = 640, display_height = 480;
   integer character_width = 16, character_height = 16, character_address = 70;
   integer pipes_width = 50, pipes_head_height = 23;
   integer coin_width = 16, coin_height = 16, coin_status = 0;
@@ -50,6 +48,8 @@ module display (
       mode_height_start = 340,
       mode_line_height = 14,
       mode_multi = 2;
+  // title x:65-613 y: 40-81
+  // mode  x:228-451 y:300-363 
   initial begin
     ignore = 12'h00f;
   end
