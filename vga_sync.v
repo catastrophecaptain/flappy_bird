@@ -1,25 +1,4 @@
 `timescale 1ns / 1ps
-
-`timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date:    00:27:04 01/02/2016 
-// Design Name: 
-// Module Name:    vgac 
-// Project Name: 
-// Target Devices: 
-// Tool versions: 
-// Description: 
-//
-// Dependencies: 
-//
-// Revision: 
-// Revision 0.01 - File Created
-// Additional Comments: 
-//
-//////////////////////////////////////////////////////////////////////////////////
 module vga_sync (vga_clk,clrn,d_in,row_addr,col_addr,rdn,r,g,b,hs,vs); // vgac
    input     [11:0] d_in;     // bbbb_gggg_rrrr, pixel
    input            vga_clk;  // 25MHz
