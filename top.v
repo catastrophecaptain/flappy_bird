@@ -60,9 +60,8 @@ module top (
         .vs(vs),
         .coin(coin)
     );
-    /*BuzzerController buzzer_controller (
+    BuzzerController buzzer_controller (
         .clk(clk),
         .buzzer(audio)
-    );*/
-    assign audio=0;
+    );
 endmodule
