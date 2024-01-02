@@ -62,7 +62,7 @@ module display (
       .points(4'b0000),
       .AN(AN),
       .Segment({dp, seg}),
-      .HEXS(score)
+      .HEXS(score_d)
   );
   clkdiv d_1 (
       .clk(clk),
