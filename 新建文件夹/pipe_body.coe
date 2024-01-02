@@ -1,2 +1,0 @@
-memory_initialization_radix=16;
-memory_initialization_vector= 06f 028 010 050 080 080 070 090 0b0 0c0 0d0 0f0 0f0 2f2 bfb fef fff fff 9fa 1f1 0f0 0f0 0f0 0f0 0f0 0f0 0e0 0c0 0c0 0c0 0c0 0c0 0a0 080 0a0 0b0 080 070 070 080 080 080 080 050 000 000 000 000 038 06f
