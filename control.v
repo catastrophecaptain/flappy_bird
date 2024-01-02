@@ -32,7 +32,7 @@ module control (
   reg [9:0] pipe3_x;  //pipe3_x为管3的x左边界坐标
   reg [9:0] pipe3_y;  //pipe3_y为管3的y上边界坐标
   wire [9:0] bird_x = 10'd70;  //bird_x为小鸟左边界坐标，小鸟是不动的，所以x坐标为常数
-  wire [9:0] gap = 10'd50;  //gap为管道间隙，供小鸟通过
+  //wire [9:0] gap = 10'd50;  //gap为管道间隙，供小鸟通过
   wire [9:0] bird_width = 10'd16;  //bird_width为小鸟宽度
   wire [9:0] bird_height = 10'd16;  //bird_height为小鸟高度
   wire [9:0] pipe_width = 10'd50;  //pipe_width为管道宽度
@@ -44,7 +44,7 @@ module control (
   reg [15:0] bird_flying;  //bird_flying为小鸟距离开始下落的时间，为0时小鸟下落
   reg old;
   wire clk_100ms;
-  reg bird_falltime;
+  //reg bird_falltime;
 
   clk_div m0 (
       .clk(clk),
@@ -93,7 +93,7 @@ module control (
       //pass1 <= 0;
       //pass2 <= 0;
       //pass3 <= 0;//pass1,pass2,pass3为小鸟是否通过管道，为1时通过
-      bird_falltime <= 0;
+      //bird_falltime <= 0;
       longpress <= 0;
       fail <= 0;
       score <= 16'd0;
@@ -131,12 +131,12 @@ module control (
         bird_flying <= 16'd10;
         bird_y[15]   <= 1'b1;
         longpress <= 1;
-        bird_falltime <= 0;
+        //bird_falltime <= 0;
       end
       if ((bird_flying<=0)||fail) begin  //小鸟下落
         bird_y[14:0] <= bird_y[14:0] + 4;
         bird_y[15] <= 1'b0;
-        bird_falltime <= bird_falltime + 1;
+        //bird_falltime <= bird_falltime + 1;
       end
       if ((bird_flying>0)&&(!fail)) begin  //小鸟按惯性向上飞
         bird_y[14:0] <= bird_y[14:0] - bird_flying;
