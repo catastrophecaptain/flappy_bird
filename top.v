@@ -1,28 +1,28 @@
 module top (
-    input wire clk,
-    input wire clr,
-    input wire mode,
-    input wire kb_clk,
-    input wire data,
-    output wire [6:0] seg,
-    output wire dp,
-    output wire [3:0] AN,
-    output wire [11:0] rgb,
-    output wire hs,
-    output wire vs,
-    output wire btn,
-    output wire audio
+    input wire clk,  // 时钟信号
+    input wire clr,  // 清除信号
+    input wire mode, // 模式信号
+    input wire kb_clk, // 键盘时钟信号
+    input wire data, // 数据信号
+    output wire [6:0] seg, // 七段显示器信号
+    output wire dp, // 小数点信号
+    output wire [3:0] AN, // 公共阳极信号
+    output wire [11:0] rgb, // RGB信号
+    output wire hs, // 水平同步信号
+    output wire vs, // 垂直同步信号
+    output wire btn, // 按钮信号
+    output wire audio // 音频信号
 );
-    wire [1:0]status;
-    assign btn=1'b0;
-    wire [15:0] score;
-    wire [15:0] mario;
-    wire [31:0] pipe_1;
-    wire [31:0] pipe_2;
-    wire [31:0] pipe_3;
-    wire [31:0] coin;
-    wire space,up,down;
-    kb_decoder kb_decoder (
+    wire [1:0]status; // 状态信号
+    assign btn=1'b0; // 按钮信号赋值为0
+    wire [15:0] score; // 分数信号
+    wire [15:0] mario; // 马里奥信号
+    wire [31:0] pipe_1; // 管道1信号
+    wire [31:0] pipe_2; // 管道2信号
+    wire [31:0] pipe_3; // 管道3信号
+    wire [31:0] coin; // 硬币信号
+    wire space,up,down; // 空格，上，下信号
+    kb_decoder kb_decoder ( // 键盘解码器模块
         .clk(clk),
         .kb_clk(kb_clk),
         .data(data),
@@ -30,7 +30,7 @@ module top (
         .down(down),
         .space(space)
     );
-    control control (
+    control control ( // 控制模块
         .clk(clk),
         .rst(clr),
         .up(space),
@@ -44,7 +44,7 @@ module top (
         .pipe_up(up),
         .pipe_down(down)
     );
-    display display (
+    display display ( // 显示模块
         .clk(clk),
         .score(score),
         .status(status),
@@ -60,7 +60,7 @@ module top (
         .vs(vs),
         .coin(coin)
     );
-    BuzzerController buzzer_controller (
+    BuzzerController buzzer_controller ( // 蜂鸣器控制器模块
         .clk(clk),
         .buzzer(audio)
     );
